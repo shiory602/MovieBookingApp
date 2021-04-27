@@ -1,0 +1,46 @@
+@import 'base';
+
+// Seat box: START ///////////////////////////////////////////
+
+.seat-number {
+    font-size: 1px;
+}
+
+.available {
+    width: 20px;
+    height: 23px;
+    padding-top: 4px;
+    background-color: $primary-color;
+    color: $black-color;
+    box-shadow: 2px 3px 3px rgba($color: $black-color, $alpha: 0.8);
+}
+
+.sold {
+    width: 20px;
+    height: 23px;
+    padding-top: 4px;
+    background-color: $dark-color;
+    color: $black-color;
+    box-shadow: 2px 3px 3px rgba($color: $black-color, $alpha: 0.8);
+}
+
+.selected {
+    width: 20px;
+    height: 23px;
+    padding-top: 4px;
+    background-color: $light-color;
+    color: $black-color;
+    box-shadow: 2px 3px 3px rgba($color: $black-color, $alpha: 0.8);
+}
+
+// Seat box: END /////////////////////////////////////////////
+
+
+.bottom-wrap {
+    .screen {
+        h6 {
+            background-color: $black-color;
+            color: $white-color;
+        }
+    }
+}
