@@ -481,8 +481,6 @@ main ul .box-item {
 }
 
 .theater .screen {
-  width: 250px;
-  height: 30px;
   margin: 20px auto;
 }
 
@@ -718,14 +716,16 @@ button {
 section .screen {
   display: block;
   background-color: #f3fcf0;
-  height: 0;
-  width: 150px;
+  width: 330px;
+  height: 30px;
+  -webkit-clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
 }
 
 section .screen h6 {
   color: #151515;
-  -webkit-box-shadow: 0px 3px 3px rgba(243, 252, 240, 0.8);
-          box-shadow: 0px 3px 3px rgba(243, 252, 240, 0.8);
+  -webkit-box-shadow: 0px 5px 3px rgba(243, 252, 240, 0.8);
+          box-shadow: 0px 5px 3px rgba(243, 252, 240, 0.8);
 }
 
 body {

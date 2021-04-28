@@ -55,16 +55,13 @@ section {
     .screen {
         display: block;
         background-color: $white-color;
-        height: 0;
-        width: 150px;
-        // border-bottom: 100px solid $white-color;
-        // border-left: 50px solid transparent;
-        // border-right: 50px solid transparent;
-
-            h6 {
-                color: $main-color;
-                // background-color: $white-color;
-                box-shadow: 0px 3px 3px rgba($color: $white-color, $alpha: 0.8);
+        width: 330px;
+        height: 30px;
+        clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+        
+        h6 {
+            color: $main-color;
+            box-shadow: 0px 5px 3px rgba($color: $white-color, $alpha: 0.8);
             }
     }
 }
