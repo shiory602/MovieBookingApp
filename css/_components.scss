@@ -1,5 +1,9 @@
 @import 'reset';
 
+
+
+
+
 // Seat box: START ///////////////////////////////////////////
 .box {
     border: 1px solid $white-color;
@@ -50,7 +54,7 @@
 
 // Seat box: END /////////////////////////////////////////////
 
-
+// Screen: START ///////////////////////////////////////////////
 section {
     .screen {
         display: block;
@@ -63,5 +67,6 @@ section {
             color: $main-color;
             box-shadow: 0px 5px 3px rgba($color: $white-color, $alpha: 0.8);
             }
+        }
     }
-}
+    // Screen: END ///////////////////////////////////////////////
