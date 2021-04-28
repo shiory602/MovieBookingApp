@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 
 header {
@@ -11,9 +12,24 @@ header {
         font-size: 64px;
         text-shadow: 5px 3px 3px rgba($color: $white-color, $alpha: 0.4);
     }
-    
-}
 
+
+    nav {
+        ul {
+            background-color: $main-color;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            list-style-type: none;
+
+            li {
+                padding: 10px;
+            }
+
+        }
+    }
+}
 
 main {
     form {

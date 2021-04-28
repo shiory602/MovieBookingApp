@@ -269,11 +269,31 @@ button {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  list-style: none;
 }
 
 header h1 {
   font-size: 64px;
   text-shadow: 5px 3px 3px rgba(243, 252, 240, 0.4);
+}
+
+header nav ul {
+  background-color: #151515;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style-type: none;
+}
+
+header nav ul li {
+  padding: 10px;
 }
 
 main form label {
@@ -663,6 +683,151 @@ button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.zoom-in {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.zoom-in:hover {
+  -webkit-transform: scale3d(1.2, 1.2, 1.2);
+          transform: scale3d(1.2, 1.2, 1.2);
+  text-shadow: 0 2px rgba(95, 117, 142, 0.8);
+}
+
+body {
+  overflow: hidden;
+}
+
+.carousel {
+  width: 600px;
+  height: calc(600px * 0.5625);
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-area {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+}
+
+.carousel-list {
+  width: 600px;
+  height: calc(600px * 0.5625);
+  margin-right: 30px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel {
+    width: 300px;
+    height: calc(300px * 0.5625);
+  }
+  .carousel-list {
+    width: 300px;
+    height: calc(300px * 0.5625);
+    margin-right: 0;
+  }
+}
+
+/* ボタンタグの装飾リセット */
+button {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border-radius: 0;
+}
+
+/*********** スライド送りボタン ***********/
+/* 共有パーツ */
+.arow-wrap {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.arrow-btn {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(95, 117, 142, 0.4);
+  border-radius: 50%;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.arrow-btn:focus {
+  -webkit-box-shadow: 0px 1px 10px -2px #151515;
+          box-shadow: 0px 1px 10px -2px #151515;
+}
+
+.arrow-btn:hover {
+  background-color: rgba(95, 117, 142, 0.7);
+  -webkit-box-shadow: 0px 1px 10px -2px #151515;
+          box-shadow: 0px 1px 10px -2px #151515;
+}
+
+/* 左 */
+.arrow-left {
+  position: relative;
+}
+
+/* ボタン左の中身（三角を擬似要素で表現） */
+.arrow-left:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #f3fcf0;
+  border-left: 2px solid #f3fcf0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-30%, -50%) rotate(-45deg);
+          transform: translate(-30%, -50%) rotate(-45deg);
+}
+
+/* 右 */
+.arrow-right {
+  position: relative;
+}
+
+/* ボタン右の中身（三角を擬似要素で表現） */
+.arrow-right:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #f3fcf0;
+  border-left: 2px solid #f3fcf0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-70%, -50%) rotate(135deg);
+          transform: translate(-70%, -50%) rotate(135deg);
 }
 
 .box {

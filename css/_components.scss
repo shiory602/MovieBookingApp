@@ -1,7 +1,149 @@
 @import 'reset';
 
+// 拡大: START ////////////////////////////////////////////////
+.zoom-in {
+    transition: 1s;
+}
 
+.zoom-in:hover {
+    transform: scale3d(1.2, 1.2, 1.2);
+    text-shadow: 0 2px rgba($color: $light-color, $alpha: 0.8);
+}
 
+// 拡大: END ////////////////////////////////////////////////
+
+// Carousel: START //////////////////////////////////////////
+body {
+    overflow: hidden;
+}
+
+.carousel {
+    width: 600px;
+    height: calc(600px * 0.5625);
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-area {
+    // width: 3150px;
+    height: 100%;
+    display: flex;
+    position: absolute;
+}
+
+.carousel-list {
+    width: 600px;
+    height: calc(600px * 0.5625);
+    margin-right: 30px;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .carousel {
+        width: 300px;
+        height: calc(300px * 0.5625);
+    }
+
+    // .carousel-area {
+    //     width: 1500px;
+    // }
+
+    .carousel-list {
+        width: 300px;
+        height: calc(300px * 0.5625);
+        margin-right: 0;
+    }
+}
+
+// Button Place: START ------------------------------------------
+/* ボタンタグの装飾リセット */
+button {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    vertical-align: middle;
+    color: inherit;
+    font: inherit;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border-radius: 0;
+}
+
+/*********** スライド送りボタン ***********/
+/* 共有パーツ */
+.arow-wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow-btn {
+    width: 48px;
+    height: 48px;
+    background-color: rgba($color: $light-color, $alpha: 0.4);
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.arrow-btn:focus {
+    box-shadow: 0px 1px 10px -2px $main-color;
+}
+
+.arrow-btn:hover {
+    background-color: rgba($color: $light-color, $alpha: 0.7);
+    box-shadow: 0px 1px 10px -2px $main-color;
+}
+
+// Button Place: END --------------------------------------------
+// Button Design: START --------------------------------------------
+/* 左 */
+.arrow-left {
+    position: relative
+}
+
+/* ボタン左の中身（三角を擬似要素で表現） */
+.arrow-left:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid $white-color;
+    border-left: 2px solid $white-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%)rotate(-45deg);
+}
+
+/* 右 */
+.arrow-right {
+    position: relative
+}
+
+/* ボタン右の中身（三角を擬似要素で表現） */
+.arrow-right:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid $white-color;
+    border-left: 2px solid $white-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -50%)rotate(135deg);
+}
+// Button Design: END --------------------------------------------
+// Carousel: END //////////////////////////////////////////
 
 
 // Seat box: START ///////////////////////////////////////////
@@ -62,11 +204,12 @@ section {
         width: 330px;
         height: 30px;
         clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
-        
+
         h6 {
             color: $main-color;
             box-shadow: 0px 5px 3px rgba($color: $white-color, $alpha: 0.8);
-            }
         }
     }
-    // Screen: END ///////////////////////////////////////////////
+}
+
+// Screen: END ///////////////////////////////////////////////
