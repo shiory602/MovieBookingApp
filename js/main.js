@@ -13,44 +13,15 @@ let seatSum = 0;
 let price = 0;
 let startTime = '--:--';
 let selectedSeats = [];
+let soldSeats = ['A6', 'A7', 'B6', 'B7'];
 
 main();
 
 function main() {
 
-    newLineS('A');
-    newLineS('B');
-    newLineL('C');
-    newLineL('D');
-    newLineL('E');
-    newLineL('F');
-    newLineL('G');
-    newLineL('H');
-
-    seats = [...document.querySelectorAll('.jsSeat')];
     selectedSeats = load();
+    render(selectedSeats);
 
-    seats.forEach(box => box.addEventListener('click', e => {
-        /** @type {HTMLElement} */
-        const el = e.currentTarget;
-        const text = el.textContent;
-        if (el.classList.contains('sold')) {
-            alert('This seat is already sold.');
-        } else if (el.classList.contains('available')) {
-            el.classList.add('selected');
-            el.classList.remove('available');
-            selectedSeats.push(text);
-            save(selectedSeats);
-        } else if (el.classList.contains('selected')) {
-            el.classList.add('available');
-            el.classList.remove('selected');
-            decrement(selectedSeats, text);
-        }
-        countSelectedSeats();
-        changePrices();
-        changeTime();
-        seatCount.innerHTML = seatSum;
-    }));
 
 
     movies.addEventListener('change', e => {
@@ -58,42 +29,65 @@ function main() {
     })
 }
 
+function clickEvent(e) {
+    /** @type {HTMLElement} */
+    const el = e.currentTarget;
+    const text = el.textContent;
+
+    if (soldSeats.some(v => v === text)) {
+        alert('This seat is already sold.');
+    } else if (selectedSeats.some(v => v === text)) {
+        decrement(selectedSeats, text);
+        save(selectedSeats);
+        render();
+    } else {
+        selectedSeats.push(text);
+        save(selectedSeats);
+        render();
+    }
+    countSelectedSeats();
+    changePrices();
+    changeTime();
+    seatCount.innerHTML = seatSum;
+}
+
+
 function newLineS(alpha) {
     const line = document.createElement('div');
     line.classList.add('line');
-    line.innerHTML = `
-         <div class="jsSeat box seat-number available">${alpha}3</div>
-         <div class="jsSeat box seat-number available">${alpha}2</div>
- 
-         <div class="jsSeat box seat-number available">${alpha}4</div>
-         <div class="jsSeat box seat-number available">${alpha}5</div>
-         <div class="jsSeat box seat-number sold">${alpha}6</div>
-         <div class="jsSeat box seat-number sold">${alpha}7</div>
-         <div class="jsSeat box seat-number available">${alpha}8</div>
-         <div class="jsSeat box seat-number available">${alpha}9</div>
-         `;
-
+    for (let i = 2; i < 10; i++) {
+        let statusClass;
+        if (soldSeats.some(v => v === `${alpha}${i}`)) {
+            statusClass = 'sold'
+        } else if (selectedSeats.some(v => v === `${alpha}${i}`)) {
+            statusClass = 'selected';
+        } else {
+            statusClass = 'available';
+        }
+        line.innerHTML += `
+        <div class="jsSeat box seat-number ${statusClass}">${alpha}${i}</div>
+        `;
+    }
     seatsList.appendChild(line);
 }
+
 
 function newLineL(alpha) {
     const line = document.createElement('div');
     line.classList.add('line');
-    line.innerHTML = `
-     <div class="jsSeat box seat-number available">${alpha}1</div>
-     <div class="jsSeat box seat-number available">${alpha}2</div>
-     <div class="jsSeat box seat-number available">${alpha}3</div>
- 
-     <div class="jsSeat box seat-number available">${alpha}4</div>
-     <div class="jsSeat box seat-number available">${alpha}5</div>
-     <div class="jsSeat box seat-number available">${alpha}6</div>
-     <div class="jsSeat box seat-number available">${alpha}7</div>
- 
-     <div class="jsSeat box seat-number available">${alpha}8</div>
-     <div class="jsSeat box seat-number available">${alpha}9</div>
-     <div class="jsSeat box seat-number available">${alpha}10</div>
-         `;
-
+    for (let i = 1; i < 11; i++) {
+        let statusClass;
+        if (soldSeats.some(v => v ===`${alpha}${i}`)) {
+            statusClass = 'sold';
+        } else if (selectedSeats.some(v => v === `${alpha}${i}`)) {
+            statusClass = 'selected';
+        } else {
+            statusClass = 'available';
+        }
+        line.innerHTML += `
+        <div class="jsSeat box seat-number ${statusClass}">${alpha}${i}</div>
+        `;
+    }
     seatsList.appendChild(line);
 }
 
@@ -150,8 +144,21 @@ function getMoviePrice(name) {
 /**
  * 画面更新
  */
-function render(data) {
-    console.log(data);
+function render() {
+    console.log(selectedSeats);
+
+    seatsList.innerHTML = '';
+
+    newLineS('A');
+    newLineS('B');
+    newLineL('C');
+    newLineL('D');
+    newLineL('E');
+    newLineL('F');
+    newLineL('G');
+    newLineL('H');
+
+    seats = [...document.querySelectorAll('.jsSeat')];
 
     countSelectedSeats();
     changePrices();
@@ -160,10 +167,8 @@ function render(data) {
     totalPrice.innerHTML = `$${price}`;
     time.innerHTML = startTime;
 
-    // seatsList.innerHtml = "";
-    // data.forEach((seatNum) => {
-    //     (seatNum);
-    // });
+    seats.forEach(box => box.addEventListener('click', e => clickEvent(e)));
+
 }
 
 /**
@@ -173,8 +178,6 @@ function render(data) {
 function decrement(data, el) {
     let index = data.indexOf(el)
     data.splice(index, 1);
-
-    render(data);
 }
 
 /**
@@ -193,6 +196,5 @@ function save(data) {
 function load() {
     const json = window.localStorage.getItem(DATA_KEY);
     const data = JSON.parse(json) || [];
-    render(data);
     return data;
 }
