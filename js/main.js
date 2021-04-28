@@ -26,6 +26,7 @@ function main() {
 
     movies.addEventListener('change', e => {
         changePrices();
+        changeTime();
     })
 }
 
