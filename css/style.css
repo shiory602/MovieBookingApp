@@ -271,12 +271,12 @@ button {
           box-sizing: border-box;
 }
 
-.first-wrap h1 {
+header h1 {
   font-size: 64px;
   text-shadow: 5px 3px 3px rgba(243, 252, 240, 0.4);
 }
 
-.first-wrap form label {
+main form label {
   font-size: 24px;
 }
 
@@ -418,18 +418,15 @@ body {
   text-align: center;
 }
 
-.first-wrap {
-  margin: 50px auto;
-}
-
-.first-wrap form {
-  margin-top: 10px;
-  line-height: 1.2rem;
-}
-
-.middle-wrap {
+main {
   width: 800px;
-  margin: 0px auto;
+  margin: 18px auto;
+  display: block;
+}
+
+main .lists {
+  width: 100%;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -438,52 +435,62 @@ body {
           justify-content: space-evenly;
 }
 
-.middle-wrap ul {
+main ul {
   list-style: none;
 }
 
-.middle-wrap ul li {
+main ul li {
   text-align: left;
   line-height: 1.7rem;
 }
 
-.middle-wrap ul li h4 {
+main ul li form {
+  margin-top: 10px;
+  line-height: 1.2rem;
+}
+
+main ul li h4 {
   font-weight: 600;
 }
 
-.middle-wrap ul li h4 span {
+main ul li h4 span {
   padding-left: 15px;
   font-size: 1.2rem;
   color: #f3fcf0;
   text-shadow: 5px 3px 3px rgba(21, 21, 21, 0.8);
 }
 
-.middle-wrap ul li .box {
+main ul li .box {
   display: inline-block;
   -webkit-box-shadow: 2px 3px 3px rgba(21, 21, 21, 0.8);
           box-shadow: 2px 3px 3px rgba(21, 21, 21, 0.8);
 }
 
-.middle-wrap ul li span {
+main ul li span {
   padding-left: 10px;
 }
 
-.bottom-wrap {
-  width: 1000px;
-  margin: 50px auto;
+main ul .box-item {
+  margin: 20px auto;
+}
+
+.theater {
+  width: 100%;
+  margin: 0px auto;
   text-align: center;
 }
 
-.bottom-wrap .screen {
-  margin-bottom: 20px;
+.theater .screen {
+  width: 250px;
+  height: 30px;
+  margin: 20px auto;
 }
 
-.bottom-wrap .screen h6 {
-  width: 250px;
+.theater .screen h6 {
   margin: 0 auto;
 }
 
-.bottom-wrap .seats-box {
+.theater .seats-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -496,16 +503,16 @@ body {
           justify-content: center;
 }
 
-.bottom-wrap .alpha h4 {
+.theater .alpha h4 {
   margin: 7px 30px;
   width: 20px;
 }
 
-.bottom-wrap .alpha .gap {
+.theater .alpha .gap {
   margin-bottom: 20px;
 }
 
-.bottom-wrap .line {
+.theater .line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -520,11 +527,11 @@ body {
           justify-content: center;
 }
 
-.bottom-wrap .line .box {
+.theater .line .box {
   margin: 2px 5px;
 }
 
-.bottom-wrap .gap {
+.theater .gap {
   margin-bottom: 20px;
 }
 
@@ -708,9 +715,17 @@ button {
   border-radius: 5px;
 }
 
-.bottom-wrap .screen h6 {
+section .screen {
+  display: block;
   background-color: #f3fcf0;
-  color: #f3fcf0;
+  height: 0;
+  width: 150px;
+}
+
+section .screen h6 {
+  color: #151515;
+  -webkit-box-shadow: 0px 3px 3px rgba(243, 252, 240, 0.8);
+          box-shadow: 0px 3px 3px rgba(243, 252, 240, 0.8);
 }
 
 body {

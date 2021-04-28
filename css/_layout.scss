@@ -6,25 +6,17 @@ body {
     text-align: center;
 }
 
-.first-wrap {
-    margin: 50px auto;
-
-    form {
-        margin-top: 10px;
-        line-height: 1.2rem;
-
-        label {
-            // display: block;
-        }
-    }
-}
-
-.middle-wrap {
+main {
     width: 800px;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-evenly;
+    margin: 18px auto;
+    display: block;
 
+    .lists {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+    }
 
     ul {
         list-style: none;
@@ -32,6 +24,12 @@ body {
         li {
             text-align: left;
             line-height: 1.7rem;
+
+
+            form {
+                margin-top: 10px;
+                line-height: 1.2rem;
+            }
 
             h4 {
                 font-weight: 600;
@@ -53,20 +51,25 @@ body {
                 padding-left: 10px;
             }
         }
-    }
 
+        .box-item {
+            margin: 20px auto;
+        }
+    }
 }
 
-.bottom-wrap {
-    width: 1000px;
-    margin: 50px auto;
+
+.theater {
+    width: 100%;
+    margin: 0px auto;
     text-align: center;
 
     .screen {
-        margin-bottom: 20px;
+        width: 250px;
+        height: 30px;
+        margin: 20px auto;
 
         h6 {
-            width: 250px;
             margin: 0 auto;
         }
     }

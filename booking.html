@@ -11,183 +11,81 @@
 
 <body>
     <div class="container">
-        <section class="first-wrap">
+        <header>
             <h1>Select seats</h1>
-            <form action="">
-                <label for="movies">Choose a movie: </label>
-                <select name="movies" id="movies">
-                    <option value="" selected>-- Please choose an option --</option>
-                    <option value="avengers">Avengers: Endgame - $10</option>
-                    <option value="joker">Joker - $12</option>
-                    <option value="toyStory">Toy Story 4 - $8</option>
-                    <option value="theLionKing">The Lion King - $9</option>
-                </select>
-            </form>
-        </section>
-        <section class="middle-wrap">
-            <ul>
-                <li>
-                    <h4>Seats:<span id="seatCount"></span></h4>
-                </li>
-                <li>
-                    <h4>Price:<span id="price"></span></h4>
-                </li>
-                <li>
-                    <h4>Time:<span id="time"></span></h4>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <div class="box available"></div>
-                    <span>Available</span>
-                </li>
-                <li>
-                    <div class="box sold"></div>
-                    <span>Sold</span>
-                </li>
-                <li>
-                    <div class="box selected"></div>
-                    <span>Selected</span>
-                </li>
-            </ul>
-        </section>
-        <section class="bottom-wrap">
-            <div class="screen">
-                <h6>SCREEN</h6>
-            </div>
-            <div class="seats-box">
-                <div class="alpha">
-                    <h4>A</h4>
-                    <h4>B</h4>
-                    <h4>C</h4>
-                    <h4 class="gap">D</h4>
-                    <h4>E</h4>
-                    <h4>F</h4>
-                    <h4>G</h4>
-                    <h4>H</h4>
+        </header>
+        <main>
+            <section class="lists">
+                <ul>
+                    <li>
+                        <form action="">
+                            <label for="movies">Choose a movie: </label>
+                            <select name="movies" id="movies">
+                                <option value="" selected>-- Please choose an option --</option>
+                                <option value="avengers">Avengers: Endgame - $10</option>
+                                <option value="joker">Joker - $12</option>
+                                <option value="toyStory">Toy Story 4 - $8</option>
+                                <option value="theLionKing">The Lion King - $9</option>
+                            </select>
+                        </form>
+                    </li>
+                    <li>
+                        <h4>Seats:<span id="seatCount"></span></h4>
+                    </li>
+                    <li>
+                        <h4>Price:<span id="price"></span></h4>
+                    </li>
+                    <li>
+                        <h4>Time:<span id="time"></span></h4>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="box-item">
+                        <div class="box available"></div>
+                        <span>Available</span>
+                    </li>
+                    <li class="box-item">
+                        <div class="box sold"></div>
+                        <span>Sold</span>
+                    </li>
+                    <li class="box-item">
+                        <div class="box selected"></div>
+                        <span>Selected</span>
+                    </li>
+                </ul>
+            </section>
+            
+            <section class="theater">
+                <div class="screen">
+                    <h6>SCREEN</h6>
                 </div>
-                <div class="seats">
-                    <!-- <div class="line">
-                        <div class="jsSeat box seat-number available">A3</div>
-                        <div class="jsSeat box seat-number available">A2</div>
-
-                        <div class="jsSeat box seat-number available">A4</div>
-                        <div class="jsSeat box seat-number available">A5</div>
-                        <div class="jsSeat box seat-number sold">A6</div>
-                        <div class="jsSeat box seat-number sold">A7</div>
-                        <div class="jsSeat box seat-number available">A8</div>
-                        <div class="jsSeat box seat-number available">A9</div>
-                    </div>
-                    <div class="line">
-                        <div class="jsSeat box seat-number sold">B2</div>
-                        <div class="jsSeat box seat-number available">B3</div>
-
-                        <div class="jsSeat box seat-number available">B4</div>
-                        <div class="jsSeat box seat-number available">B5</div>
-                        <div class="jsSeat box seat-number available">B6</div>
-                        <div class="jsSeat box seat-number available">B7</div>
-
-                        <div class="jsSeat box seat-number available">B8</div>
-                        <div class="jsSeat box seat-number available">B9</div>
-                    </div>
-                    <div class="line">
-                        <div class="jsSeat box seat-number available">C1</div>
-                        <div class="jsSeat box seat-number available">C2</div>
-                        <div class="jsSeat box seat-number available">C3</div>
-
-                        <div class="jsSeat box seat-number available">C4</div>
-                        <div class="jsSeat box seat-number available">C5</div>
-                        <div class="jsSeat box seat-number available">C6</div>
-                        <div class="jsSeat box seat-number available">C7</div>
-
-                        <div class="jsSeat box seat-number available">C8</div>
-                        <div class="jsSeat box seat-number available">C9</div>
-                        <div class="jsSeat box seat-number available">C10</div>
-                    </div>
-                    <div class="gap line">
-                        <div class="jsSeat box seat-number available">D1</div>
-                        <div class="jsSeat box seat-number available">D2</div>
-                        <div class="jsSeat box seat-number available">D3</div>
-
-                        <div class="jsSeat box seat-number available">D4</div>
-                        <div class="jsSeat box seat-number available">D5</div>
-                        <div class="jsSeat box seat-number available">D6</div>
-                        <div class="jsSeat box seat-number available">D7</div>
-
-                        <div class="jsSeat box seat-number available">D8</div>
-                        <div class="jsSeat box seat-number available">D9</div>
-                        <div class="jsSeat box seat-number available">D10</div>
+                <div class="seats-box">
+                    <div class="alpha">
+                        <h4>A</h4>
+                        <h4>B</h4>
+                        <h4>C</h4>
+                        <h4 class="gap">D</h4>
+                        <h4>E</h4>
+                        <h4>F</h4>
+                        <h4>G</h4>
+                        <h4>H</h4>
                     </div>
 
-                    <div class="line">
-                        <div class="jsSeat box seat-number available">E1</div>
-                        <div class="jsSeat box seat-number available">E2</div>
-                        <div class="jsSeat box seat-number available">E3</div>
+                    <div class="seats"></div>
 
-                        <div class="jsSeat box seat-number available">E4</div>
-                        <div class="jsSeat box seat-number available">E5</div>
-                        <div class="jsSeat box seat-number available">E6</div>
-                        <div class="jsSeat box seat-number available">E7</div>
-
-                        <div class="jsSeat box seat-number available">E8</div>
-                        <div class="jsSeat box seat-number available">E9</div>
-                        <div class="jsSeat box seat-number available">E10</div>
+                    <div class="alpha">
+                        <h4>A</h4>
+                        <h4>B</h4>
+                        <h4>C</h4>
+                        <h4 class="gap">D</h4>
+                        <h4>E</h4>
+                        <h4>F</h4>
+                        <h4>G</h4>
+                        <h4>H</h4>
                     </div>
-                    <div class="line">
-                        <div class="jsSeat box seat-number available">F1</div>
-                        <div class="jsSeat box seat-number available">F2</div>
-                        <div class="jsSeat box seat-number available">F3</div>
-
-                        <div class="jsSeat box seat-number available">F4</div>
-                        <div class="jsSeat box seat-number available">F5</div>
-                        <div class="jsSeat box seat-number available">F6</div>
-                        <div class="jsSeat box seat-number available">F7</div>
-
-                        <div class="jsSeat box seat-number available">F8</div>
-                        <div class="jsSeat box seat-number available">F9</div>
-                        <div class="jsSeat box seat-number available">F10</div>
-                    </div>
-                    <div class="line">
-                        <div class="jsSeat box seat-number available">G1</div>
-                        <div class="jsSeat box seat-number available">G2</div>
-                        <div class="jsSeat box seat-number available">G3</div>
-
-                        <div class="jsSeat box seat-number available">G4</div>
-                        <div class="jsSeat box seat-number available">G5</div>
-                        <div class="jsSeat box seat-number available">G6</div>
-                        <div class="jsSeat box seat-number available">G7</div>
-
-                        <div class="jsSeat box seat-number available">G8</div>
-                        <div class="jsSeat box seat-number available">G9</div>
-                        <div class="jsSeat box seat-number available">G10</div>
-                    </div>
-                    <div class="line">
-                        <div class="jsSeat box seat-number available">H1</div>
-                        <div class="jsSeat box seat-number available">H2</div>
-                        <div class="jsSeat box seat-number available">H3</div>
-
-                        <div class="jsSeat box seat-number available">H4</div>
-                        <div class="jsSeat box seat-number available">H5</div>
-                        <div class="jsSeat box seat-number available">H6</div>
-                        <div class="jsSeat box seat-number available">H7</div>
-
-                        <div class="jsSeat box seat-number available">H8</div>
-                        <div class="jsSeat box seat-number available">H9</div>
-                        <div class="jsSeat box seat-number available">H10</div>
-                    </div> -->
                 </div>
-                <div class="alpha">
-                    <h4>A</h4>
-                    <h4>B</h4>
-                    <h4>C</h4>
-                    <h4 class="gap">D</h4>
-                    <h4>E</h4>
-                    <h4>F</h4>
-                    <h4>G</h4>
-                    <h4>H</h4>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
     </div>
 
     <script src="./js/main.js"></script>

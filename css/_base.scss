@@ -6,15 +6,19 @@
     box-sizing: border-box;
 }
 
-.first-wrap {
+header {
     h1 {
         font-size: 64px;
         text-shadow: 5px 3px 3px rgba($color: $white-color, $alpha: 0.4);
     }
+    
+}
+
+
+main {
     form {
         label {
             font-size: 24px;
         }
     }
 }
-
