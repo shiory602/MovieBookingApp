@@ -281,6 +281,12 @@ main form label {
   font-size: 24px;
 }
 
+footer h6 {
+  font-size: 20px;
+  font-weight: 300;
+  color: #5f758e;
+}
+
 /*
 html5doctor.com Reset Style sheet
 v1.6.1
@@ -420,7 +426,7 @@ body {
 }
 
 main {
-  width: 800px;
+  width: 100%;
   margin: 18px auto;
   display: block;
 }
@@ -556,6 +562,51 @@ header nav ul {
 
 header nav ul li {
   margin: 0 40px;
+}
+
+.section-titles {
+  text-align: left;
+}
+
+.section-titles h2 {
+  margin: 20px;
+  background-color: #151515;
+}
+
+.movies {
+  margin: 40px;
+}
+
+.films {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.genres {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.genres .genre-item {
+  margin: 10px 50px;
 }
 
 /*
@@ -726,11 +777,8 @@ nav .search-container button:hover {
   background: rgba(238, 66, 102, 0.8);
 }
 
-body {
-  overflow: hidden;
-}
-
 .carousel {
+  overflow: hidden;
   width: 600px;
   height: calc(600px * 0.5625);
   margin: 0 auto;
@@ -860,6 +908,16 @@ button {
           transform: translate(-70%, -50%) rotate(135deg);
 }
 
+/*---------------------------------------------
+| Genre Select Buttons                         |
+-----------------------------------------------*/
+.genre-item {
+  padding: 10px 30px;
+  background-color: #ee4266;
+  color: #f3fcf0;
+  border-radius: 20px;
+}
+
 .box {
   border: 1px solid #f3fcf0;
 }
@@ -908,7 +966,7 @@ button {
   border-radius: 5px;
 }
 
-section .screen {
+.theater .screen {
   display: block;
   background-color: #f3fcf0;
   width: 330px;
@@ -917,7 +975,7 @@ section .screen {
           clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
 }
 
-section .screen h6 {
+.theater .screen h6 {
   color: #151515;
   -webkit-box-shadow: 0px 5px 3px rgba(243, 252, 240, 0.8);
           box-shadow: 0px 5px 3px rgba(243, 252, 240, 0.8);

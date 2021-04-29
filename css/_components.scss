@@ -59,12 +59,10 @@ nav {
 }
 // Search Bar: END /////////////////////////////////////
 
-// Carousel: START //////////////////////////////////////////
-body {
-    overflow: hidden;
-}
+// Carousel: START /////////////////////////////////////////
 
 .carousel {
+    overflow: hidden;
     width: 600px;
     height: calc(600px * 0.5625);
     margin: 0 auto;
@@ -194,6 +192,27 @@ button {
 // Carousel: END //////////////////////////////////////////
 
 
+
+/*---------------------------------------------
+| Genre Select Buttons                         |
+-----------------------------------------------*/
+
+.genre-item {
+    padding: 10px 30px;
+    background-color: $point-color;
+    color: $white-color;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
 // Seat box: START ///////////////////////////////////////////
 .box {
     border: 1px solid $white-color;
@@ -245,7 +264,7 @@ button {
 // Seat box: END /////////////////////////////////////////////
 
 // Screen: START ///////////////////////////////////////////////
-section {
+.theater {
     .screen {
         display: block;
         background-color: $white-color;
@@ -259,5 +278,4 @@ section {
         }
     }
 }
-
 // Screen: END ///////////////////////////////////////////////
