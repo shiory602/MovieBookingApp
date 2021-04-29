@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Booking</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- jQuery -->
@@ -21,11 +23,15 @@
                     <li class="zoom-in">Home</li>
                     <li class="zoom-in">Now Showing</li>
                     <li class="zoom-in">Coming Soon</li>
+                    <li class="search-container">
+                        <form action="search-button">
+                            <input type="text" placeholder="Search Movie, Genre..." name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </li>
+                    <li class="zoom-in">Account</li>
                 </ul>
-                <div class="nav-right">
-                    <input type="text" placeholder="Search Movie, Genre...">
-                    <span class="zoom-in">Account</span>
-                </div>
+                    
                     
             </nav>
         </header>

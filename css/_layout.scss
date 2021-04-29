@@ -108,15 +108,24 @@ main {
 
 // index.html /////////////////////////////////////////
 
-nav {
-    height: 35px;
-    margin: 5px 200px;
+header {
 
-    ul {
-        float: left;
-    }
-
-    .nav-right {
-        float: right;
+    nav {
+        background-color: $main-color;
+        height: 35px;
+        margin: 10px auto;
+        
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            list-style-type: none;
+            
+            li {
+                margin: 0 40px;
+            }
+            
+        }
+        
     }
 }

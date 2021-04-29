@@ -277,27 +277,6 @@ header h1 {
   text-shadow: 5px 3px 3px rgba(243, 252, 240, 0.4);
 }
 
-header nav {
-  background-color: #151515;
-}
-
-header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  list-style-type: none;
-}
-
-header nav ul li {
-  padding: 0 20px;
-}
-
 main form label {
   font-size: 24px;
 }
@@ -555,17 +534,28 @@ main ul .box-item {
   margin-bottom: 20px;
 }
 
-nav {
+header nav {
+  background-color: #151515;
   height: 35px;
-  margin: 5px 200px;
+  margin: 10px auto;
 }
 
-nav ul {
-  float: left;
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  list-style-type: none;
 }
 
-nav .nav-right {
-  float: right;
+header nav ul li {
+  margin: 0 40px;
 }
 
 /*
@@ -712,10 +702,28 @@ button {
 }
 
 nav input[type=text] {
-  padding: 6px 14px;
+  padding: 6px 10px;
   border: none;
-  margin-right: 16px;
   font-size: 17px;
+  outline: none;
+}
+
+nav input:focus {
+  background-color: #5f758e;
+  color: #f3fcf0;
+}
+
+nav .search-container button {
+  padding: 9px 10px;
+  margin-right: 16px;
+  background: #ee4266;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+nav .search-container button:hover {
+  background: rgba(238, 66, 102, 0.8);
 }
 
 body {
