@@ -577,6 +577,10 @@ header nav ul li {
   margin: 40px;
 }
 
+.movies h4, .movies p {
+  font-size: 0.7rem;
+}
+
 .films {
   display: -webkit-box;
   display: -ms-flexbox;
