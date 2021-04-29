@@ -15,16 +15,16 @@ header {
 
 
     nav {
+        background-color: $main-color;
         ul {
-            background-color: $main-color;
-            margin-top: 10px;
+            // margin-top: 10px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             list-style-type: none;
 
             li {
-                padding: 10px;
+                padding: 0 20px;
             }
 
         }

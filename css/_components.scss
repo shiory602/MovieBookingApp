@@ -12,6 +12,19 @@
 
 // 拡大: END ////////////////////////////////////////////////
 
+// Search Bar: START /////////////////////////////////////
+nav {
+    input[type=text] {
+        // float: right;
+        padding: 6px 14px;
+        border: none;
+        // margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+    }
+}
+// Search Bar: END /////////////////////////////////////
+
 // Carousel: START //////////////////////////////////////////
 body {
     overflow: hidden;

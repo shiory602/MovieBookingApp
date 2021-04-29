@@ -105,3 +105,18 @@ main {
         margin-bottom: 20px;
     }
 }
+
+// index.html /////////////////////////////////////////
+
+nav {
+    height: 35px;
+    margin: 5px 200px;
+
+    ul {
+        float: left;
+    }
+
+    .nav-right {
+        float: right;
+    }
+}
