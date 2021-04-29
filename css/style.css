@@ -287,6 +287,13 @@ footer h6 {
   color: #5f758e;
 }
 
+/*------------------------------------------------------------------
+|movieDetail.html
+/*----------------------------------------------------------------*/
+.movie-detail {
+  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Feiga.com%2Fmovie%2F53508%2F&psig=AOvVaw3Clb_fMPtzyKGZj3b0C9Q2&ust=1619823845690000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjEi5_IpPACFQAAAAAdAAAAABAM");
+}
+
 /*
 html5doctor.com Reset Style sheet
 v1.6.1
@@ -577,7 +584,8 @@ header nav ul li {
   margin: 40px;
 }
 
-.movies h4, .movies p {
+.movies h4,
+.movies p {
   font-size: 0.7rem;
 }
 
@@ -611,6 +619,63 @@ header nav ul li {
 
 .genres .genre-item {
   margin: 10px 50px;
+}
+
+.movie-detail {
+  width: 100%;
+  margin: 92px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.movie-detail-description {
+  width: 40%;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.movie-detail-description h4 {
+  letter-spacing: 0.2em;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.movie-detail-description h4 span {
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 0 3px;
+  background-color: #f17f29;
+  border-radius: 3px;
+}
+
+.movie-detail-description .info {
+  padding: 8px 0;
+}
+
+.movie-detail-description .info .rate {
+  font-size: 0.9rem;
+}
+
+.movie-detail-description .info .view {
+  font-size: 0.7rem;
+}
+
+.movie-detail-description p {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.movie-detail-trailer {
+  margin-top: 36px;
 }
 
 /*
@@ -913,10 +978,19 @@ button {
 }
 
 /*---------------------------------------------
-| Genre Select Buttons                         |
+| Buttons                         |
 -----------------------------------------------*/
 .genre-item {
   padding: 10px 30px;
+  background-color: #ee4266;
+  color: #f3fcf0;
+  border-radius: 20px;
+}
+
+.ticket-button {
+  width: 600px;
+  margin: 80px auto;
+  padding: 24px 30px;
   background-color: #ee4266;
   color: #f3fcf0;
   border-radius: 20px;

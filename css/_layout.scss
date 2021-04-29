@@ -114,24 +114,25 @@ header {
         background-color: $main-color;
         height: 35px;
         margin: 10px auto;
-        
+
         ul {
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
             list-style-type: none;
-            
+
             li {
                 margin: 0 40px;
             }
-            
+
         }
-        
+
     }
 }
 
 .section-titles {
     text-align: left;
+
     h2 {
         margin: 20px;
         background-color: $main-color;
@@ -140,7 +141,9 @@ header {
 
 .movies {
     margin: 40px;
-    h4, p {
+
+    h4,
+    p {
         font-size: 0.7rem;
     }
 }
@@ -160,4 +163,56 @@ header {
     .genre-item {
         margin: 10px 50px;
     }
+}
+
+// movie detail /////////////////////////////////
+
+.movie-detail {
+    width: 100%;
+    margin: 92px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.movie-detail-description {
+    width: 40%;
+    margin: 30px 0;
+    text-align: left;
+
+    h4 {
+        letter-spacing: 0.2em;
+        font-size: 1.6rem;
+        font-weight: 600;
+
+        span {
+            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+            font-weight: 300;
+            padding: 0 3px;
+            background-color: $sub-color;
+            border-radius: 3px;
+        }
+    }
+
+    .info {
+        padding: 8px 0;
+
+        .rate {
+            font-size: 0.9rem;
+        }
+
+        .view {
+            font-size: 0.7rem;
+        }
+    }
+
+    p {
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+    }
+}
+
+.movie-detail-trailer {
+    margin-top: 36px;
 }

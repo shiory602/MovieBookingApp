@@ -194,9 +194,10 @@ button {
 
 
 /*---------------------------------------------
-| Genre Select Buttons                         |
+| Buttons                         |
 -----------------------------------------------*/
 
+// index.html genre select button //////////////
 .genre-item {
     padding: 10px 30px;
     background-color: $point-color;
@@ -204,7 +205,15 @@ button {
     border-radius: 20px;
 }
 
-
+// movieDetail.html  ticket purchase button //////
+.ticket-button {
+    width: 600px;
+    margin: 80px auto;
+    padding: 24px 30px;
+    background-color: $point-color;
+    color: $white-color;
+    border-radius: 20px;
+}
 
 
 
