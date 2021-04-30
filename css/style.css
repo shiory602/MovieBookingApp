@@ -570,11 +570,14 @@ header nav ul li {
 
 .section-titles {
   text-align: left;
+  background-color: #151515;
+  margin: 76px auto;
 }
 
 .section-titles h2 {
-  margin: 20px;
-  background-color: #151515;
+  width: 100%;
+  margin: 20px auto;
+  background-color: rgba(243, 252, 240, 0.1);
 }
 
 .movies {
@@ -878,6 +881,7 @@ nav .search-container button:active {
   width: 600px;
   height: calc(600px * 0.5625);
   margin: 0 auto;
+  margin-top: 55px;
   position: relative;
 }
 
@@ -1005,7 +1009,7 @@ button {
 }
 
 /*---------------------------------------------
-| Buttons                         |
+| Buttons                         
 -----------------------------------------------*/
 .genre-item {
   padding: 10px 30px;

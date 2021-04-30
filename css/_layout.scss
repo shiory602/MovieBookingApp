@@ -133,10 +133,13 @@ header {
 
 .section-titles {
     text-align: left;
+    background-color: $main-color;
+    margin: 76px auto;
 
     h2 {
-        margin: 20px;
-        background-color: $main-color;
+        width: 100%;
+        margin: 20px auto;
+        background-color: rgba($color: $white-color, $alpha: 0.1);
     }
 }
 
