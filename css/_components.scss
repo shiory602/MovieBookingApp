@@ -25,6 +25,10 @@ nav {
     input:focus {
         background-color: $light-color;
         color: $white-color;
+
+        &::placeholder {
+            color: $white-color;
+        }
     }
 
     // @media screen and (max-width: 600px) {

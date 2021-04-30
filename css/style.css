@@ -833,6 +833,22 @@ nav input:focus {
   color: #f3fcf0;
 }
 
+nav input:focus::-webkit-input-placeholder {
+  color: #f3fcf0;
+}
+
+nav input:focus:-ms-input-placeholder {
+  color: #f3fcf0;
+}
+
+nav input:focus::-ms-input-placeholder {
+  color: #f3fcf0;
+}
+
+nav input:focus::placeholder {
+  color: #f3fcf0;
+}
+
 nav .search-container button {
   margin-top: -2px;
   border: 1px solid #f3fcf0;
