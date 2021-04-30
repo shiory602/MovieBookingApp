@@ -9,19 +9,17 @@
 
 header {
     h1 {
-        font-size: 64px;
-        text-shadow: 5px 3px 3px rgba($color: $white-color, $alpha: 0.4);
+        font-size: 48px;
+        font-weight: 400;
     }
-
 }
 
 main {
-    form {
-        label {
-            font-size: 24px;
-        }
+    .lists {
+        font-size: 28px;
     }
 }
+
 
 footer {
     h6 {
@@ -34,7 +32,3 @@ footer {
 /*------------------------------------------------------------------
 |movieDetail.html
 /*----------------------------------------------------------------*/
-
-.movie-detail {
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Feiga.com%2Fmovie%2F53508%2F&psig=AOvVaw3Clb_fMPtzyKGZj3b0C9Q2&ust=1619823845690000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjEi5_IpPACFQAAAAAdAAAAABAM");
-}

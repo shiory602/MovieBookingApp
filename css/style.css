@@ -273,12 +273,12 @@ button {
 }
 
 header h1 {
-  font-size: 64px;
-  text-shadow: 5px 3px 3px rgba(243, 252, 240, 0.4);
+  font-size: 48px;
+  font-weight: 400;
 }
 
-main form label {
-  font-size: 24px;
+main .lists {
+  font-size: 28px;
 }
 
 footer h6 {
@@ -290,10 +290,6 @@ footer h6 {
 /*------------------------------------------------------------------
 |movieDetail.html
 /*----------------------------------------------------------------*/
-.movie-detail {
-  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Feiga.com%2Fmovie%2F53508%2F&psig=AOvVaw3Clb_fMPtzyKGZj3b0C9Q2&ust=1619823845690000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjEi5_IpPACFQAAAAAdAAAAABAM");
-}
-
 /*
 html5doctor.com Reset Style sheet
 v1.6.1
@@ -441,6 +437,7 @@ main {
 main .lists {
   width: 100%;
   margin: 0 auto;
+  padding: 0 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -495,7 +492,7 @@ main ul .box-item {
 }
 
 .theater .screen {
-  margin: 20px auto;
+  margin: 0 auto 20px;
 }
 
 .theater .screen h6 {
@@ -568,7 +565,7 @@ header nav ul {
 }
 
 header nav ul li {
-  margin: 0 40px;
+  margin: 0 35px;
 }
 
 .section-titles {
@@ -640,6 +637,7 @@ header nav ul li {
   width: 40%;
   margin: 30px 0;
   text-align: left;
+  text-shadow: 0 2px 3px #5f758e;
 }
 
 .movie-detail-description h4 {
@@ -654,6 +652,7 @@ header nav ul li {
   font-weight: 300;
   padding: 0 3px;
   background-color: #f17f29;
+  border: 1px solid #f3fcf0;
   border-radius: 3px;
 }
 
@@ -824,6 +823,7 @@ button {
 nav input[type=text] {
   padding: 6px 10px;
   border: none;
+  border-radius: 3px 0 0 3px;
   font-size: 17px;
   outline: none;
 }
@@ -834,16 +834,27 @@ nav input:focus {
 }
 
 nav .search-container button {
-  padding: 9px 10px;
-  margin-right: 16px;
+  margin-top: -2px;
+  border: 1px solid #f3fcf0;
+  border-radius: 0 3px 3px 0;
+  -webkit-box-shadow: 0px 2px rgba(243, 252, 240, 0.8);
+          box-shadow: 0px 2px rgba(243, 252, 240, 0.8);
+  line-height: 1.1rem;
+  padding: 0 5px;
   background: #ee4266;
-  font-size: 17px;
   border: none;
   cursor: pointer;
 }
 
 nav .search-container button:hover {
   background: rgba(238, 66, 102, 0.8);
+}
+
+nav .search-container button:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  position: relative;
+  top: 2px;
 }
 
 .carousel {
@@ -984,7 +995,10 @@ button {
   padding: 10px 30px;
   background-color: #ee4266;
   color: #f3fcf0;
+  -webkit-box-shadow: 0px 5px rgba(243, 252, 240, 0.8);
+          box-shadow: 0px 5px rgba(243, 252, 240, 0.8);
   border-radius: 20px;
+  border: 1px solid #f3fcf0;
 }
 
 .ticket-button {
@@ -993,7 +1007,31 @@ button {
   padding: 24px 30px;
   background-color: #ee4266;
   color: #f3fcf0;
+  -webkit-box-shadow: 0px 5px rgba(243, 252, 240, 0.8);
+          box-shadow: 0px 5px rgba(243, 252, 240, 0.8);
   border-radius: 20px;
+  border: 1px solid #f3fcf0;
+}
+
+.genre-item:hover,
+.ticket-button:hover {
+  background: rgba(238, 66, 102, 0.8);
+}
+
+.genre-item:active,
+.ticket-button:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  position: relative;
+  top: 5px;
+}
+
+select {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+  outline: none;
 }
 
 .box {
@@ -1009,6 +1047,12 @@ button {
           box-shadow: none;
   position: relative;
   top: 3px;
+}
+
+.jsSeat:not(.sold):hover {
+  -webkit-filter: contrast(300%);
+          filter: contrast(300%);
+  cursor: pointer;
 }
 
 .available {
