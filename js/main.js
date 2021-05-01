@@ -1,22 +1,25 @@
 import {
     getMovieCategories,
+    getNowPlayingMovieData,
     getPopularMovieData
 } from "./fetch.js";
 import {
     startCarousel
 } from "./carousel.js";
 
+const nowShowing = document.querySelector('.nowShowingJS');
 const genreButtons = document.querySelector('.genres');
-const genreJS = document.querySelector('.genreJS');
+const genre = document.querySelector('.genreJS');
 
 startCarousel();
 
+// Category API: START -----------------------------------------------------------------
 getMovieCategories()
     .then(data => {
         const categoryName = data.genres.map(i => i.name); // category Name array
         // console.log(categoryName.length);
         const categoryId = data.genres.map(i => i.id); // category ID array
-        // console.log(categoryId)
+        console.log(data);
 
         /*----------------------
         Category Buttons
@@ -35,7 +38,7 @@ getMovieCategories()
         Genre Section
         ----------------------*/
         categoryName.forEach(el => {
-            genreJS.innerHTML += `
+            genre.innerHTML += `
                 <h2 id="${el}">${el}</h2>
                 <div class="films">
                     <div class="film-item">
@@ -48,11 +51,32 @@ getMovieCategories()
                 </div>
             `;
         })
-        // genreJS.appendChild();
-
     })
     .catch(error => console.error(error));
+// Category API: END -----------------------------------------------------------------
 
 
+// Now Playing API: START -----------------------------------------------------------------
+Promise.all([
+    getNowPlayingMovieData(),
+    getMovieCategories(),
+])
+.then(([data1, data2]) => {
+    data1.results.forEach(el => {
+        nowShowing.innerHTML += `
+        <div class="film-item">
+            <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
+                <img src="https://image.tmdb.org/t/p/w500${el.poster_path}" alt="">
+                <h4>${el.title}</h4>
+                <p>${el.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</p>
+            </a>
+        </div>
+        `;
+    })
+})
+.catch(error => console.error(error));
 
-getPopularMovieData()
+function findGenreName(data, id) {
+    return data.genres.find(el => el.id === id).name;
+}
+// Now Playing API: END -----------------------------------------------------------------

@@ -570,14 +570,15 @@ header nav ul li {
 
 .section-titles {
   text-align: left;
-  background-color: #151515;
   margin: 76px auto;
 }
 
 .section-titles h2 {
   width: 100%;
-  margin: 20px auto;
+  padding: 12px;
   background-color: rgba(243, 252, 240, 0.1);
+  -webkit-box-shadow: 5px 5px 5px rgba(21, 21, 21, 0.8);
+          box-shadow: 5px 5px 5px rgba(21, 21, 21, 0.8);
 }
 
 .movies {
@@ -590,6 +591,9 @@ header nav ul li {
 }
 
 .films {
+  -webkit-box-shadow: 5px 5px 5px rgba(21, 21, 21, 0.8);
+          box-shadow: 5px 5px 5px rgba(21, 21, 21, 0.8);
+  background-color: #151515;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -600,6 +604,14 @@ header nav ul li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: auto;
+  -ms-scroll-snap-type: x;
+      scroll-snap-type: x;
+}
+
+.film-item {
+  margin: 5px 28px;
+  scroll-snap-align: center;
 }
 
 .genres {
@@ -1006,6 +1018,24 @@ button {
   left: 50%;
   -webkit-transform: translate(-70%, -50%) rotate(135deg);
           transform: translate(-70%, -50%) rotate(135deg);
+}
+
+/*--------------------------
+| Image poster
+--------------------------*/
+.film-item {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.film-item:hover {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+}
+
+.film-item img {
+  width: 190.99px;
+  height: 268.99px;
 }
 
 /*---------------------------------------------

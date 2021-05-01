@@ -133,13 +133,13 @@ header {
 
 .section-titles {
     text-align: left;
-    background-color: $main-color;
     margin: 76px auto;
 
     h2 {
         width: 100%;
-        margin: 20px auto;
+        padding: 12px;
         background-color: rgba($color: $white-color, $alpha: 0.1);
+        box-shadow: 5px 5px 5px rgba($color: $main-color, $alpha: 0.8);
     }
 }
 
@@ -153,9 +153,18 @@ header {
 }
 
 .films {
+    box-shadow: 5px 5px 5px rgba($color: $main-color, $alpha: 0.8);
+    background-color: $main-color;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    overflow: auto;
+    scroll-snap-type: x;
+}
+
+.film-item {
+    margin: 5px 28px;
+    scroll-snap-align: center;
 }
 
 .genres {
