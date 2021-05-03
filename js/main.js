@@ -3,15 +3,41 @@ import {
     getNowPlayingMovieData,
     getPopularMovieData
 } from "./fetch.js";
+
 import {
     startCarousel
 } from "./carousel.js";
 
+const carousel = document.querySelector('.carousel-area');
 const nowShowing = document.querySelector('.nowShowingJS');
 const genreButtons = document.querySelector('.genres');
 const genre = document.querySelector('.genreJS');
 
 startCarousel();
+
+// Popular API: START -----------------------------------------------------------------
+// Promise.all([
+//     updatePopular(), // getPopularMovieData().then(...) の部分
+
+// ]);
+// p.then(() => startCarousel());
+
+getPopularMovieData()
+    .then(data => {
+        console.log(data);
+        let li = document.createElement('li');
+        li.classList.add('carousel-list');
+        data.results.forEach(i => {
+            li.innerHTML += `
+            <img class="carousel-img" src="https://image.tmdb.org/t/p/w500${i.backdrop_path}" alt="${i.title}" width="1000px">
+        `;
+    })
+    carousel.appendChild(li);
+
+    })
+    .catch(error => console.error(error));
+// Popular API: END -----------------------------------------------------------------
+
 
 // Category API: START -----------------------------------------------------------------
 getMovieCategories()
@@ -58,12 +84,12 @@ getMovieCategories()
 
 // Now Playing API: START -----------------------------------------------------------------
 Promise.all([
-    getNowPlayingMovieData(),
-    getMovieCategories(),
-])
-.then(([data1, data2]) => {
-    data1.results.forEach(el => {
-        nowShowing.innerHTML += `
+        getNowPlayingMovieData(),
+        getMovieCategories(),
+    ])
+    .then(([data1, data2]) => {
+        data1.results.forEach(el => {
+            nowShowing.innerHTML += `
         <div class="film-item">
             <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
                 <img src="https://image.tmdb.org/t/p/w500${el.poster_path}" alt="">
@@ -72,9 +98,9 @@ Promise.all([
             </a>
         </div>
         `;
+        })
     })
-})
-.catch(error => console.error(error));
+    .catch(error => console.error(error));
 
 function findGenreName(data, id) {
     return data.genres.find(el => el.id === id).name;
