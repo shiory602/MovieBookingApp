@@ -835,6 +835,14 @@ button {
   text-shadow: 0 2px rgba(95, 117, 142, 0.8);
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10000;
+  background-color: #151515;
+}
+
 nav input[type=text] {
   padding: 6px 10px;
   border: none;

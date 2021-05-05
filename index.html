@@ -33,14 +33,33 @@
                         <a href="#genres">Genres</a>
                     </li>
                     <li class="search-container">
-                        <form action="search-button">
-                            <input type="text" placeholder="Search Movie, Genre..." name="search">
+                        <form action="" id="search">
+                            <input type="text" placeholder="Search Movie Title..." id="text" name="text">
                             <button type="submit"><i class="fa fa-search fa-xs"></i></button>
                         </form>
                     </li>
                     <li><i class="fas fa-user-circle"></i></li>
                 </ul>
-
+                <!-- モーダルウィンドウ：開始 -->
+                <p><a id="modal-open" class="button-link">クリックするとモーダルウィンドウを開きます。</a></p>
+                <div id="modal" class="modal">
+                    <div class="modal-wrap">
+                        <div class="modal-bg"></div>
+                        <div class="modal-box">
+                            <div class="inner">
+                                <!-- <div class="film-item"> -->
+                                    <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
+                                        <img src="./img/ladyandthetramp.png" alt="${el.title}">
+                                        <h4>${el.title}</h4>
+                                        <p>el.genre_ids</p>
+                                    </a>
+                                <!-- </div> -->
+                                <div class="modal-close"><span>Close</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- モーダルウィンドウ：終了 -->
 
             </nav>
         </header>
