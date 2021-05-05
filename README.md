@@ -11,13 +11,13 @@
     - [x] Category
 
 ### Information about Detail Movie page
-- [] Create the details movie page.
-    - [] Background Image
-    - [] Title of the Movie
-    - [] Category
-    - [] Description of the movie
-    - [] Technical information (Director name, Cast, Genre , Runtime etc.)
-- [] Details movie page need to have the information about the movie, possibility to watch the trailer and the button to buy a ticket.
+- [ ] Create the details movie page.
+    - [ ] Background Image
+    - [ ] Title of the Movie
+    - [ ] Category
+    - [ ] Description of the movie
+    - [ ] Technical information (Director name, Cast, Genre , Runtime etc.)
+- [ ] Details movie page need to have the information about the movie, possibility to watch the trailer and the button to buy a ticket.
 
 
 ***
@@ -32,6 +32,6 @@
 
 
 ## Feature
-- [] placeholderの色を選択時に白にする
-- [] 画面読み込み時に画像を表示する
-- [] レートの星がアニメーションで表示されるようにする
+- [ ] placeholderの色を選択時に白にする
+- [ ] 画面読み込み時に画像を表示する
+- [ ] レートの星がアニメーションで表示されるようにする
