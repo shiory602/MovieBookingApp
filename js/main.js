@@ -9,6 +9,7 @@ import {
     startCarousel
 } from "./carousel.js";
 
+
 const carousel = document.querySelector('.carousel-area');
 const nowShowing = document.querySelector('.nowShowingJS');
 const upcoming = document.querySelector('.upcomingJS');
@@ -16,6 +17,11 @@ const genreButtons = document.querySelector('.genres');
 const genre = document.querySelector('.genreJS');
 
 startCarousel();
+
+
+// Search API: START -----------------------------------------------------------------
+
+// Search API: END -----------------------------------------------------------------
 
 
 // Category API: START -----------------------------------------------------------------
@@ -107,7 +113,6 @@ Promise.all([
         getMovieCategories(),
     ])
     .then(([data1, data2]) => {
-        console.log("https://image.tmdb.org/t/p/w500" + data1.results[0].poster_path);
         data1.results.forEach(el => {
             upcoming.innerHTML += `
                 <div class="film-item">

@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Booking</title>
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- jQuery -->
@@ -40,34 +41,13 @@
                     </li>
                     <li><i class="fas fa-user-circle"></i></li>
                 </ul>
-                <!-- モーダルウィンドウ：開始 -->
-                <p><a id="modal-open" class="button-link">クリックするとモーダルウィンドウを開きます。</a></p>
-                <div id="modal" class="modal">
-                    <div class="modal-wrap">
-                        <div class="modal-bg"></div>
-                        <div class="modal-box">
-                            <div class="inner">
-                                <!-- <div class="film-item"> -->
-                                    <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
-                                        <img src="./img/ladyandthetramp.png" alt="${el.title}">
-                                        <h4>${el.title}</h4>
-                                        <p>el.genre_ids</p>
-                                    </a>
-                                <!-- </div> -->
-                                <div class="modal-close"><span>Close</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- モーダルウィンドウ：終了 -->
-
-            </nav>
-        </header>
-        <main class=".main-index">
-            <!-- Carousel: START -->
-            <div class="carousel">
-                <ul class="carousel-area">
-                    <!-- <li class="carousel-list">
+    </nav>
+    </header>
+    <main class=".main-index">
+        <!-- Carousel: START -->
+        <div class="carousel">
+            <ul class="carousel-area">
+                <!-- <li class="carousel-list">
                         <img class="carousel-img" src="https://imgc.nxtv.jp/img/info/tit/00042/SID0042467.png" alt="Avengers" width="1000px">
                     </li>
                     <li class="carousel-list">
@@ -79,38 +59,38 @@
                     <li class="carousel-list">
                         <img class="carousel-img" src="https://i2.wp.com/thedisinsider.com/wp-content/uploads/2021/01/lion-king.jpeg?fit=1024%2C576&ssl=1" alt="The Lion King" width="1000px">
                     </li> -->
-                </ul>
-                <div class="arrow-wrap">
-                    <div class="arrow-left">
-                        <button class="arrow-btn js-btn-back" type="button"></button>
-                    </div>
-                    <div class="arrow-right">
-                        <button class="arrow-btn js-btn-next" type="button"></button>
-                    </div>
+            </ul>
+            <div class="arrow-wrap">
+                <div class="arrow-left">
+                    <button class="arrow-btn js-btn-back" type="button"></button>
+                </div>
+                <div class="arrow-right">
+                    <button class="arrow-btn js-btn-next" type="button"></button>
                 </div>
             </div>
-            <!-- Carousel: END -->
-            <section class="movies">
+        </div>
+        <!-- Carousel: END -->
+        <section class="movies">
+            <div class="section-titles">
+                <h2 id="now-showing">Now Showing</h2>
+                <div class="nowShowingJS films"></div>
+
                 <div class="section-titles">
-                    <h2 id="now-showing">Now Showing</h2>
-                    <div class="nowShowingJS films"></div>
+                    <h2 id="coming-soon">Coming Soon</h2>
+                    <div class="upcomingJS films"></div>
+                </div>
+                <div class="section-titles">
+                    <h2 id="genres">Genres</h2>
+                    <div class="genres"></div>
+                </div>
 
-                    <div class="section-titles">
-                        <h2 id="coming-soon">Coming Soon</h2>
-                        <div class="upcomingJS films"></div>
-                    </div>
-                    <div class="section-titles">
-                        <h2 id="genres">Genres</h2>
-                        <div class="genres"></div>
-                    </div>
-
-                    <div class="genreJS"></div>
-            </section>
-        </main>
-        <footer>
-            <img src="./img/logo_transparent.png" alt="logo" width="200px">
-            <h6>Copyright © 2021 SHIORI SUZUKI</h6>
-        </footer>
+                <div class="genreJS"></div>
+        </section>
+    </main>
+    <footer>
+        <img src="./img/logo_transparent.png" alt="logo" width="200px">
+        <h6>Copyright © 2021 SHIORI SUZUKI</h6>
+    </footer>
     </div>
 
     <script src="./js/main.js" type="module"></script>

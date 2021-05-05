@@ -843,6 +843,10 @@ header {
   background-color: #151515;
 }
 
+main {
+  padding-top: 100px;
+}
+
 nav input[type=text] {
   padding: 6px 10px;
   border: none;
