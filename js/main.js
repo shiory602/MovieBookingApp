@@ -1,7 +1,8 @@
 import {
     getMovieCategories,
+    getPopularMovieData,
     getNowPlayingMovieData,
-    getPopularMovieData
+    getUpcomingMovieData
 } from "./fetch.js";
 
 import {
@@ -10,33 +11,11 @@ import {
 
 const carousel = document.querySelector('.carousel-area');
 const nowShowing = document.querySelector('.nowShowingJS');
+const upcoming = document.querySelector('.upcomingJS');
 const genreButtons = document.querySelector('.genres');
 const genre = document.querySelector('.genreJS');
 
 startCarousel();
-
-// Popular API: START -----------------------------------------------------------------
-// Promise.all([
-//     updatePopular(), // getPopularMovieData().then(...) の部分
-
-// ]);
-// p.then(() => startCarousel());
-
-getPopularMovieData()
-    .then(data => {
-        console.log(data);
-        let li = document.createElement('li');
-        li.classList.add('carousel-list');
-        data.results.forEach(i => {
-            li.innerHTML += `
-            <img class="carousel-img" src="https://image.tmdb.org/t/p/w500${i.backdrop_path}" alt="${i.title}" width="1000px">
-        `;
-    })
-    carousel.appendChild(li);
-
-    })
-    .catch(error => console.error(error));
-// Popular API: END -----------------------------------------------------------------
 
 
 // Category API: START -----------------------------------------------------------------
@@ -82,6 +61,24 @@ getMovieCategories()
 // Category API: END -----------------------------------------------------------------
 
 
+// Popular API: START -----------------------------------------------------------------
+getPopularMovieData()
+    .then(data => {
+        console.log(data);
+        let li = document.createElement('li');
+        li.classList.add('carousel-list');
+        data.results.forEach(i => {
+            li.innerHTML += `
+                <img class="carousel-img" src="https://image.tmdb.org/t/p/w500${i.backdrop_path}" alt="${i.title}" width="1000px">
+            `;
+        })
+        carousel.appendChild(li);
+
+    })
+    .catch(error => console.error(error));
+// Popular API: END -----------------------------------------------------------------
+
+
 // Now Playing API: START -----------------------------------------------------------------
 Promise.all([
         getNowPlayingMovieData(),
@@ -92,7 +89,7 @@ Promise.all([
             nowShowing.innerHTML += `
         <div class="film-item">
             <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.tmdb.org/t/p/w500${el.poster_path}" alt="">
+                <img src="https://image.tmdb.org/t/p/w500${el.poster_path}" alt="${el.title}">
                 <h4>${el.title}</h4>
                 <p>${el.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</p>
             </a>
@@ -101,8 +98,32 @@ Promise.all([
         })
     })
     .catch(error => console.error(error));
+// Now Playing API: END -----------------------------------------------------------------
+
+
+// Upcoming API: START -----------------------------------------------------------------
+Promise.all([
+        getUpcomingMovieData(),
+        getMovieCategories(),
+    ])
+    .then(([data1, data2]) => {
+        console.log("https://image.tmdb.org/t/p/w500" + data1.results[0].poster_path);
+        data1.results.forEach(el => {
+            upcoming.innerHTML += `
+                <div class="film-item">
+                    <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
+                        <img src="https://image.tmdb.org/t/p/w500${el.poster_path}" alt="${el.title}">
+                        <h4>${el.title}</h4>
+                        <p>${el.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</p>
+                    </a>
+                </div>
+            `;
+        })
+    })
+    .catch(error => console.error(error));
+// Upcoming API: END -----------------------------------------------------------------
+
 
 function findGenreName(data, id) {
     return data.genres.find(el => el.id === id).name;
 }
-// Now Playing API: END -----------------------------------------------------------------

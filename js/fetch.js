@@ -5,12 +5,11 @@ const API_KEY = '0872d5dd1f8ee0ee90233d854bce0ad4';
 let url_categories = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
 let url_popular = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
 let url_now_playing = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`;
-
 let url_upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`;
-// let url_detail = `https://api.themoviedb.org/3/movie/${MOVIE_ID}?api_key=${API_KEY}&append_to_response=videos,images`;
+// let url_detail = `https://api.themoviedb.org/3/movie/${MOVIE_ID}?api_key=${API_KEY}&append_to_response=videos,images`; // detail
 
 
-// console.log(url_detail);
+// console.log(url_upcoming);
 
 
 
@@ -58,25 +57,28 @@ export function getNowPlayingMovieData() {
     });
 }
 
-
-
-/*--------------------------------------------------------------*/
+/*-------------------------------
+Upcoming
+-------------------------------*/
+export function getUpcomingMovieData() {
+    return fetch(url_upcoming)
+    .then(res => {
+        checkError(res);
+        return res.json();
+    });
+}
 
 /*-------------------------------
-Movie Title
+Movie Detail
 -------------------------------*/
-// export function getMovieDetail() {
-//     return fetch(url_detail)
-//     .then(res => {
-//         checkError(res);
-//         return res.json();
-//     })
-//     .then(data => {
-//         console.log(data);
-//     })
-//     .catch(error => console.error(error));
-// }
-
-/*-------------------------------
-Movie Picture
--------------------------------*/
+export function getMovieDetail() {
+    return fetch(url_detail)
+    .then(res => {
+        checkError(res);
+        return res.json();
+    })
+    .then(data => {
+        // console.log("detail: " + data);
+    })
+    .catch(error => console.error(error));
+}
