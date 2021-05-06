@@ -33,4 +33,3 @@
 - [x] See the total selected seat number
 - [x] See the total ticket price
 - [x] The data is stored on the localStorage
-
