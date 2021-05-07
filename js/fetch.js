@@ -17,20 +17,20 @@ let url_search = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&l
 /*-------------------------------
 Search
 -------------------------------*/
-const searchData = document.querySelector("#search");
-const text = document.querySelector("#text");
+// const searchData = document.querySelector("#search");
+// const text = document.querySelector("#text");
 
-searchData.addEventListener("submit", e => {
-    e.preventDefault();
-    searchText = text.value;
-});
+// searchData.addEventListener("submit", e => {
+//     e.preventDefault();
+//     searchText = text.value;
+// });
 
-export function searchMovies() {
-    return fetch(url_search).then(res => {
-        checkError(res);
-        return res.json();
-    })
-}
+// export function searchMovies() {
+//     return fetch(url_search).then(res => {
+//         checkError(res);
+//         return res.json();
+//     })
+// }
 
 
 /*-------------------------------
