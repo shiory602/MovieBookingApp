@@ -1,32 +1,11 @@
-import {
-    getMovieCategories,
-    getPopularMovieData,
-    getNowPlayingMovieData,
-    getUpcomingMovieData
-} from "./fetch.js";
+const API_KEY = "0872d5dd1f8ee0ee90233d854bce0ad4";
 
-const movieDetail = document.querySelector('.movie-detail-description');
+const url = new URL(window.location.href); // URLをオブジェクトとして返す
+const movieId = url.searchParams.get("id"); // 指定したクエリ引数へアクセスする
+const url_detail = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&append_to_response=videos,images`;
 
-Promise.all([
-        getNowPlayingMovieData(),
-        getMovieCategories(),
-    ])
-    .then(([data1, data2]) => {
-        data1.results.forEach(el => {
-            console.log(el);
-            movieDetail.innerHTML = `
-                <h4>${el.title}<span>${el.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</span></h4>
-                <div class="info">
-                    <span class="rate">★★★★★</span>
-                    <span class="view">13652 views</span>
-                </div>
-                <p>${el.overview}}</p>
-            `;
-        });
-
-    })
-    .catch(error => console.error(error));
-
-function findGenreName(data, id) {
-    return data.genres.find(el => el.id === id).name;
-}
+console.log(url_detail);
+fetch(url_detail).then((response) => response.json())
+    .then((json) => {
+        console.log(json);
+    });

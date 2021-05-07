@@ -52,7 +52,7 @@ Promise.all([
         data1.results.forEach(el => {
             nowShowing.innerHTML += `
         <div class="film-item">
-            <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
+            <a href="./movieDetail.html?id=${el.id}" target="_blank" rel="noopener noreferrer">
                 <img src="https://image.tmdb.org/t/p/w500${el.poster_path}" alt="${el.title}">
                 <h4>${el.title}</h4>
                 <p>${el.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</p>
@@ -74,7 +74,7 @@ Promise.all([
         data1.results.forEach(el => {
             upcoming.innerHTML += `
                 <div class="film-item">
-                    <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
+                    <a href="./movieDetail.html?id=${el.id}" target="_blank" rel="noopener noreferrer">
                         <img src="https://image.tmdb.org/t/p/w500${el.poster_path}" alt="${el.title}">
                         <h4>${el.title}</h4>
                         <p>${el.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</p>
