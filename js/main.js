@@ -113,40 +113,46 @@ getMovieCategories()
 
 // Genre API: END -----------------------------------------------------------------
 Promise.all([
-    getTopRatedData(),
-    getMovieCategories(),
-])
-.then(([data1, data2]) => {
+        getTopRatedData(),
+        getMovieCategories(),
+    ])
+    .then(([data1, data2]) => {
         /*----------------------
         Genre Section
         ----------------------*/
-        const categoryId = data2.genres.map(i => i.id); // category ID array
-        console.log(data1.results[0].genre_ids.map(id => filterGenreID(data2, id)));
-        data1.results.forEach(data => {
-            if(categoryId.forEach(id => id === data.genre_ids)) {
-                genre.innerHTML += `
-                    <h2 id="${data2.genres[0].name}">${data2.genres[0].name}</h2>
-                    <div class="films">
-                        <div class="film-item">
-                            <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
-                            <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="${data.title}">
-                                <h4>${data.title}</h4>
-                                <p>${data.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</p>
-                            </a>
-                        </div>
+        data2.genres.forEach(data => {
+            genre.innerHTML += `<h2 id="${data.name}">${data.name}</h2>`;
+
+            // 一覧
+            const genreMovies = data1.results.filter(
+                (v) => v.genre_ids.includes(data.id)
+            );
+            const elFilmList = createFilmList(genreMovies);
+            genre.append(elFilmList);
+
+            // 一覧を生成して返す
+            function createFilmList(genreMovies) {
+                const el = document.createElement('div');
+                el.classList.add("films");
+                genreMovies.forEach((movie) => {
+                el.innerHTML += `
+                    <div class="film-item">
+                        <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
+                        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+                            <h4>${movie.title}</h4>
+                            <p>${movie.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</p>
+                        </a>
                     </div>
                 `;
+            })
+            return el;
             }
         })
-})
+    })
 // Genre API: END -----------------------------------------------------------------
 
 
 
 function findGenreName(data, id) {
     return data.genres.find(el => el.id === id).name;
-}
-
-function filterGenreID(data, id) {
-    return data.genres.filter(el => el.id === id);
 }
