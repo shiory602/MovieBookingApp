@@ -6,6 +6,7 @@ let url_categories = `https://api.themoviedb.org/3/genre/movie/list?api_key=${AP
 let url_popular = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
 let url_now_playing = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`;
 let url_upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`;
+let url_topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
 
 let searchText; // titleに含まれるワード
 let url_search = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${searchText}&page=1&include_adult=false`;
@@ -13,6 +14,7 @@ let url_search = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&l
 let MOVIE_ID = 99;
 let url_detail = `https://api.themoviedb.org/3/movie/${MOVIE_ID}?api_key=${API_KEY}&append_to_response=videos,images`; // detail
 
+// console.log(url_topRated);
 
 
 /*-------------------------------
@@ -83,6 +85,17 @@ Upcoming
 -------------------------------*/
 export function getUpcomingMovieData() {
     return fetch(url_upcoming)
+        .then(res => {
+            checkError(res);
+            return res.json();
+        });
+}
+
+/*-----------------------------------
+Top Rated for Showing Genre section
+------------------------------------*/
+export function getTopRatedData() {
+    return fetch(url_topRated)
         .then(res => {
             checkError(res);
             return res.json();
