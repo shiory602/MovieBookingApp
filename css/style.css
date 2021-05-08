@@ -650,41 +650,46 @@ header nav ul li {
 
 .movie-detail-description {
   width: 40%;
-  margin: 30px 0;
+  margin: 0px 0;
   text-align: left;
   text-shadow: 0 2px 3px #5f758e;
 }
 
 .movie-detail-description h4 {
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   font-size: 1.6rem;
   font-weight: 600;
 }
 
-.movie-detail-description h4 span {
+.movie-detail-description #category-list .category {
   letter-spacing: 0.05em;
   font-size: 0.8rem;
   font-weight: 300;
-  padding: 0 3px;
-  background-color: #f17f29;
-  border: 1px solid #f3fcf0;
+  padding: 4 8px;
+  background-color: rgba(243, 252, 240, 0.125);
   border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.movie-detail-description #category-list .category:nth-of-type(n + 2) {
+  margin-left: 8px;
 }
 
 .movie-detail-description .info {
   padding: 8px 0;
 }
 
-.movie-detail-description .info .rate {
-  font-size: 0.9rem;
+.movie-detail-description .info #release-date {
+  font-size: 0.8rem;
 }
 
-.movie-detail-description .info .view {
-  font-size: 0.7rem;
+.movie-detail-description .info #vote-average {
+  font-size: 0.8rem;
+  margin-left: 24px;
 }
 
 .movie-detail-description p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.05em;
 }
 

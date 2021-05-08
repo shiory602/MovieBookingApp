@@ -190,42 +190,51 @@ header {
 
 .movie-detail-description {
     width: 40%;
-    margin: 30px 0;
+    margin: 0px 0;
     text-align: left;
     text-shadow: 0 2px 3px $light-color;
 
     h4 {
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
         font-size: 1.6rem;
         font-weight: 600;
+    }
 
 
-        span {
+    #category-list {
+        .category {
             letter-spacing: 0.05em;
             font-size: 0.8rem;
             font-weight: 300;
-            padding: 0 3px;
-            background-color: $sub-color;
-            border: 1px solid $white-color;
+            padding: 4 8px;
+            background-color: rgba($color: $white-color, $alpha: 0.125);
             border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        .category:nth-of-type(n + 2) {
+            margin-left: 8px;
         }
     }
+
 
 
     .info {
         padding: 8px 0;
-
-        .rate {
-            font-size: 0.9rem;
+        
+        #release-date {
+            font-size: 0.8rem;
         }
-
-        .view {
-            font-size: 0.7rem;
+        #vote-average {
+            font-size: 0.8rem;
+            margin-left: 24px;
         }
     }
 
+
+
     p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         letter-spacing: 0.05em;
     }
 }
