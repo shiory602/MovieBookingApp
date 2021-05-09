@@ -137,7 +137,7 @@ Promise.all([
                 genreMovies.forEach((movie) => {
                 el.innerHTML += `
                     <div class="film-item">
-                        <a href="./movieDetail.html" target="_blank" rel="noopener noreferrer">
+                        <a href="./movieDetail.html?id=${el.id}" target="_blank" rel="noopener noreferrer">
                         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                             <h4>${movie.title}</h4>
                             <p>${movie.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</p>
