@@ -4,7 +4,7 @@ const movieOverview = document.querySelector('#overview');
 const releaseDate = document.querySelector('#release-date');
 const voteAverage = document.querySelector('#vote-average');
 const movieBg = document.querySelector('.movie-detail-bg');
-const movieTrailer = document.querySelector("movie-trailer");
+const movieTrailer = document.querySelector("#movie-trailer");
 
 const recommendJS = document.querySelector('.recommendJS');
 
@@ -49,15 +49,15 @@ fetch(url_detail).then((response) => response.json())
         // }
 
         console.log(`https://www.youtube.com/embed/${json.videos.results[0].key}`);
-        const iframe = document.querySelector("iframe");
+        const iframe = document.createElement("iframe");
         iframe.src = `https://www.youtube.com/embed/${json.videos.results[0].key}`;
         iframe.width = "560";
         iframe.height = "315";
         iframe.title = "YouTube video player";
         iframe.frameborder = "0";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        iframe.setAttribute("allowfullscreen");
-        movieTrailer.insertAdjacentElement("beforeend", trailer);
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.setAttribute("allow", "fullscreen");
+        movieTrailer.insertAdjacentElement("beforeend", iframe);
         // movieTrailer.src = `https://www.youtube.com/embed/v=${json.videos.results[0].key}`;
 
 
