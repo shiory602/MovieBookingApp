@@ -3,8 +3,8 @@ const movieCategory = document.querySelector('#category-list');
 const movieOverview = document.querySelector('#overview');
 const releaseDate = document.querySelector('#release-date');
 const voteAverage = document.querySelector('#vote-average');
-
 const movieBg = document.querySelector('.movie-detail-bg');
+const movieTrailer = document.querySelector("movie-trailer");
 
 const recommendJS = document.querySelector('.recommendJS');
 
@@ -16,7 +16,7 @@ const url_detail = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_
 const url_recommend = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${API_KEY}&language=en-US&page=1`;
 let url_categories = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
 
-console.log(url_recommend);
+console.log(url_detail);
 
 /*----------------------------------
 Detail
@@ -39,7 +39,28 @@ fetch(url_detail).then((response) => response.json())
         voteAverage.textContent = `★${json.vote_average}`;
         movieOverview.textContent = json.overview;
 
-        movieBg.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${json.backdrop_path}" alt="${json.title} trailer">`
+        const movieBackdrop = document.querySelector("img");
+        movieBackdrop.src = `https://image.tmdb.org/t/p/w500${json.backdrop_path}`;
+        movieBackdrop.alt = `${json.title} image">`;
+        movieBg.insertAdjacentElement("beforeend", movieBackdrop);
+        
+        // for(const video of json.videos.results) {
+        //     console.log(video.id);
+        // }
+
+        console.log(`https://www.youtube.com/embed/${json.videos.results[0].key}`);
+        const iframe = document.querySelector("iframe");
+        iframe.src = `https://www.youtube.com/embed/${json.videos.results[0].key}`;
+        iframe.width = "560";
+        iframe.height = "315";
+        iframe.title = "YouTube video player";
+        iframe.frameborder = "0";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        iframe.setAttribute("allowfullscreen");
+        movieTrailer.insertAdjacentElement("beforeend", trailer);
+        // movieTrailer.src = `https://www.youtube.com/embed/v=${json.videos.results[0].key}`;
+
+
     });
 
 
@@ -51,6 +72,7 @@ function getRecommendedData() {
         return res.json();
     });
 }
+
 function getMovieCategories() {
     return fetch(url_categories).then(res => {
         return res.json();
@@ -72,7 +94,7 @@ Promise.all([
             aEl.target = "_blank";
             aEl.rel = "noopener noreferrer";
             recommendEl.insertAdjacentElement("beforeend", aEl);
-            
+
             const imgEl = document.createElement("img");
             imgEl.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
             imgEl.alt = movie.title;
@@ -84,9 +106,9 @@ Promise.all([
             const pEl = document.createElement("p");
             pEl.textContent += movie.genre_ids.map(id => findGenreName(json2, id)).join(", ");
             aEl.insertAdjacentElement("beforeend", pEl);
-        }  
+        }
     })
 
-    function findGenreName(data, id) {
-        return data.genres.find(el => el.id === id).name;
-    }
+function findGenreName(data, id) {
+    return data.genres.find(el => el.id === id).name;
+}
