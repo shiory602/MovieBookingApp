@@ -157,7 +157,7 @@ header {
     background-color: $main-color;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     overflow: auto;
     scroll-snap-type: x;
 }
@@ -179,26 +179,30 @@ header {
 }
 
 // movie detail /////////////////////////////////
-
+.main-detail {
+    padding: 80px;
+}
 .movie-detail {
     width: 100%;
-    margin: 92px 0px;
+    margin: 72px auto;
+    padding-bottom: 90px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
+#movie-title {
+    letter-spacing: 0.025em;
+    font-size: 1.9rem;
+    font-weight: 900;
+    text-shadow: 0 5px 3px $light-color;
+    text-transform: uppercase;
+}
+
 .movie-detail-description {
     width: 40%;
-    margin: 0px 0;
     text-align: left;
     text-shadow: 0 2px 3px $light-color;
-
-    h4 {
-        letter-spacing: 0.1em;
-        font-size: 1.6rem;
-        font-weight: 600;
-    }
 
 
     #category-list {
@@ -221,10 +225,11 @@ header {
 
     .info {
         padding: 8px 0;
-        
+
         #release-date {
             font-size: 0.8rem;
         }
+
         #vote-average {
             font-size: 0.8rem;
             margin-left: 24px;

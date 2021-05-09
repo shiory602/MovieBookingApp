@@ -601,9 +601,9 @@ header nav ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   overflow: auto;
   -ms-scroll-snap-type: x;
       scroll-snap-type: x;
@@ -633,9 +633,14 @@ header nav ul li {
   margin: 5px;
 }
 
+.main-detail {
+  padding: 80px;
+}
+
 .movie-detail {
   width: 100%;
-  margin: 92px 0px;
+  margin: 72px auto;
+  padding-bottom: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -648,17 +653,18 @@ header nav ul li {
           justify-content: space-evenly;
 }
 
-.movie-detail-description {
-  width: 40%;
-  margin: 0px 0;
-  text-align: left;
-  text-shadow: 0 2px 3px #5f758e;
+#movie-title {
+  letter-spacing: 0.025em;
+  font-size: 1.9rem;
+  font-weight: 900;
+  text-shadow: 0 5px 3px #5f758e;
+  text-transform: uppercase;
 }
 
-.movie-detail-description h4 {
-  letter-spacing: 0.1em;
-  font-size: 1.6rem;
-  font-weight: 600;
+.movie-detail-description {
+  width: 40%;
+  text-align: left;
+  text-shadow: 0 2px 3px #5f758e;
 }
 
 .movie-detail-description #category-list .category {
