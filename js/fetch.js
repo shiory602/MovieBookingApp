@@ -1,5 +1,5 @@
 // https://shiory602.github.io/MovieBookingApp/
-// https://www.themoviedb.org/settings/api
+// https://developers.themoviedb.org/3/getting-started/introduction
 
 const API_KEY = "0872d5dd1f8ee0ee90233d854bce0ad4";
 let url_categories = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
@@ -110,4 +110,5 @@ export function getTopRatedData() {
         return res.json();
     });
 }
+
 
