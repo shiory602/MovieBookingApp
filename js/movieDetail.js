@@ -2,7 +2,7 @@ const movieTitle = document.querySelector('#movie-title');
 const movieCategory = document.querySelector('#category-list');
 const movieOverview = document.querySelector('#overview');
 const releaseDate = document.querySelector('#release-date');
-const voteAverage = document.querySelector('#vote-average');
+const runtime = document.querySelector('#runtime');
 const movieBg = document.querySelector('.movie-detail-bg');
 const movieTrailer = document.querySelector("#movie-trailer");
 
@@ -36,19 +36,14 @@ fetch(url_detail).then((response) => response.json())
         }
 
         releaseDate.textContent = `Release: ${json.release_date}`;
-        voteAverage.textContent = `★${json.vote_average}`;
+        runtime.innerHTML = `<i class="fas fa-clock"></i>${json.runtime}min`;
         movieOverview.textContent = json.overview;
 
         const movieBackdrop = document.querySelector("img");
         movieBackdrop.src = `https://image.tmdb.org/t/p/w500${json.backdrop_path}`;
         movieBackdrop.alt = `${json.title} image">`;
         movieBg.insertAdjacentElement("beforeend", movieBackdrop);
-        
-        // for(const video of json.videos.results) {
-        //     console.log(video.id);
-        // }
 
-        console.log(`https://www.youtube.com/embed/${json.videos.results[0].key}`);
         const iframe = document.createElement("iframe");
         iframe.src = `https://www.youtube.com/embed/${json.videos.results[0].key}`;
         iframe.width = "560";
@@ -58,9 +53,6 @@ fetch(url_detail).then((response) => response.json())
         iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
         iframe.setAttribute("allow", "fullscreen");
         movieTrailer.insertAdjacentElement("beforeend", iframe);
-        // movieTrailer.src = `https://www.youtube.com/embed/v=${json.videos.results[0].key}`;
-
-
     });
 
 
