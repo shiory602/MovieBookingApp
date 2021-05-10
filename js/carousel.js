@@ -3,7 +3,7 @@ export function startCarousel() {
     ////////////////////////////////////////////////////////////////////////
     //////////////////////////// 【必要な変数を定義】////////////////////////////
     //////////  スライドリストの合計幅を計算→CSSでエリアに代入
-    const carouselArea = document.querySelector(".carousel-area");
+    // const carouselArea = document.querySelector(".carousel-area");
     const carouselItem = [...document.querySelectorAll('.carousel-item')];
     const btnNext = document.querySelector(".js-btn-next");
     const btnBack = document.querySelector(".js-btn-back");
@@ -11,7 +11,7 @@ export function startCarousel() {
     let length;
     let slideArea;
     for (const item of carouselItem) {
-        width = item.offsetWidth; // .carousel-listの1枚分の幅
+        width = item.offsetWidth + 30; // .carousel-listの1枚分の幅
         length = carouselItem.length; // .carousel-itemの数
         slideArea = width * length; // レール全体幅 = スライド1枚の幅 × スライド合計数
         item.setAttribute('width', slideArea); // カルーセルレールに計算した合計幅を指定
@@ -25,13 +25,13 @@ export function startCarousel() {
     ////////////////////////////【スライドの動き方+ページネーションに関する関数定義】////////////////////////////
     ////////// スライドの切り替わりを「changeslide」として定義 
     function changeSlide() {
-        carouselArea.scroll({
-            left: slideCurrent * -width,
-            behavior: "smooth"
-        })
-        // $('.carousel-area').stop().animate({ // stopメソッドを入れることでアニメーション1回毎に止める
-        //     left: slideCurrent * -width // 代入されたスライド数 × リスト1枚分の幅を左に動かす
-        // });
+        // carouselArea.scroll({
+        //     left: slideCurrent * -width,
+        //     behavior: "smooth"
+        // })
+        $('.carousel-area').stop().animate({ // stopメソッドを入れることでアニメーション1回毎に止める
+            left: slideCurrent * -width // 代入されたスライド数 × リスト1枚分の幅を左に動かす
+        });
     }
 
 
