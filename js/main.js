@@ -18,10 +18,6 @@ const genreButtons = document.querySelector('.genres');
 const genre = document.querySelector('.genreJS');
 
 
-// Search API: START -----------------------------------------------------------------
-
-// Search API: END -----------------------------------------------------------------
-
 
 
 // Popular API (Carousel) : START -----------------------------------------------------------------
@@ -152,6 +148,32 @@ Promise.all([
         })
     })
 // Genre API: END -----------------------------------------------------------------
+
+
+// Search API: START -----------------------------------------------------------------
+modal();
+function modal() {
+    //[POINT]idを取得する
+    var open = document.getElementById('open');
+    var close = document.getElementById('close');
+    var mask = document.getElementById('mask');
+    var modal = document.getElementById('modal');
+    //[POINT]クリックイベントを定義
+    open.addEventListener('click', function () { //openではマスクとモーダル画面が表示できるようにする
+        //[POINT]クラス名を変えてCSSを当て込まないようにする
+        mask.removeAttribute("class");
+        modal.removeAttribute("class");
+    });
+    close.addEventListener('click', function () { //closeではマスクとモーダル画面を非表示にする
+        //[POINT]クラス名を再定義し、CSSを当て込む
+        mask.setAttribute("class", "hidden");
+        modal.setAttribute("class", "hidden");
+    }); //モーダル画面外をクリックしてもモーダル画面が閉じるようにする
+    mask.addEventListener('click', function () { //closeと同じなので、closeのクリックイベントを呼び出せば良い
+        close.click(); //このように書くことができる
+    });
+};
+// Search API: END -----------------------------------------------------------------
 
 
 

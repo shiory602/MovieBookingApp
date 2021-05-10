@@ -16,6 +16,17 @@
 
 <body>
     <div class="container">
+        
+        <!-- グレーの透過マスク -->
+        <div id="mask" class="hidden"></div>
+        <!-- モーダル画面 -->
+        <div id="modal" class="hidden">
+            <!-- モーダル画面を閉じるボタン -->
+            <div id="close" class="button">
+                <button>モーダルを閉じる</button>
+            </div>
+        </div> 
+
         <header>
             <a href="index.html"><img src="./img/logo_transparent.png" alt="logo" width="200px"></a>
             <nav>
@@ -35,7 +46,7 @@
                     <li class="search-container">
                         <form action="" id="search">
                             <input type="text" placeholder="Search Movie Title..." id="text" name="text">
-                            <button type="submit"><i class="fa fa-search fa-xs"></i></button>
+                            <button type="submit" id="open"><i class="fa fa-search fa-xs"></i></button>
                         </form>
                     </li>
                     <li><i class="fas fa-user-circle"></i></li>
