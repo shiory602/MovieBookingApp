@@ -158,15 +158,16 @@ Promise.all([
 modal();
 function modal() {
     //[POINT]idを取得する
-    var open = document.getElementById('open');
-    var close = document.getElementById('close');
-    var mask = document.getElementById('mask');
-    var modal = document.getElementById('modal');
+    var open = document.querySelector('#open');
+    var close = document.querySelector('#close');
+    var mask = document.querySelector('#mask');
+    var modal = document.querySelector('#modal');
     //[POINT]クリックイベントを定義
-    open.addEventListener('click', function () { //openではマスクとモーダル画面が表示できるようにする
+    open.addEventListener('click', function (e) { //openではマスクとモーダル画面が表示できるようにする
+        e.preventDefault();
         //[POINT]クラス名を変えてCSSを当て込まないようにする
-        mask.removeAttribute("class");
-        modal.removeAttribute("class");
+        mask.removeAttribute("class", "hidden");
+        modal.removeAttribute("class", "hidden");
     });
     close.addEventListener('click', function () { //closeではマスクとモーダル画面を非表示にする
         //[POINT]クラス名を再定義し、CSSを当て込む
