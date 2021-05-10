@@ -919,24 +919,29 @@ nav .search-container button:active {
 モーダル
 ----------------------*/
 .button {
+  width: 38px;
+  height: 36px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 32px;
   cursor: pointer;
   /*[POINT] 指マークのカーソル*/
-  width: 200px;
+  width: 38px;
   /*横幅200px*/
-  height: 50px;
+  height: 36px;
   /*縦幅50px*/
-  font-size: 16px;
+  font-size: 20px;
   /*文字を少し大きくする*/
   text-align: center;
   /*テキスト中央寄せ(横)*/
-  line-height: 50px;
+  line-height: 32px;
   /*heightに合わせ、テキストを中央寄せ(縦)*/
   margin: 20px auto 0px;
   /*上に20px,左右中央寄せ,下に0pxの余白*/
-  border: 1px solid #000;
+  border: 1px solid #5f758e;
   /*黒1pxの実線で縁を作る*/
-  -webkit-box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
-          box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 3px 3px rgba(21, 21, 21, 0.8);
+          box-shadow: 3px 3px rgba(21, 21, 21, 0.8);
   /*ちょっと影をつけて立体感を出す*/
   border-radius: 5px;
   /*ちょっと角を丸くする*/
@@ -955,7 +960,7 @@ nav .search-container button:active {
 
 /*マスクを作成する*/
 #mask {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(21, 21, 21, 0.8);
   /*[POINT]背景を40％の濃さで透過する*/
   /*[POINT]画面全体を覆うようにする*/
   /*[POINT]絶対位置で指定し、上下左右0距離から描画を始めることで画面全体に適用できる*/
@@ -974,8 +979,9 @@ nav .search-container button:active {
 
 /*モーダル画面*/
 #modal {
-  background: #ff0;
+  background: rgba(243, 252, 240, 0.8);
   /*背景は白(わかりやすさのため今は白じゃない)*/
+  color: #151515;
   width: 80%;
   /*横幅を指定*/
   position: absolute;
