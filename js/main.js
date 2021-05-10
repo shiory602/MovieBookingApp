@@ -26,12 +26,16 @@ getPopularMovieData()
         for (let i = 0; i < 3; i++) {
             const li = document.createElement('li');
             li.setAttribute("class", "carousel-item");
-
+            const a = document.createElement("a");
+            a.href = `./movieDetail.html?id=${imgEl.results[i].id}`;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
             const img = document.createElement("img");
             img.setAttribute("class", "carousel-img");
             img.src = `https://image.tmdb.org/t/p/w500${imgEl.results[i].backdrop_path}`;
             img.alt = imgEl.results[i].title;
-            li.insertAdjacentElement("beforeend", img);
+            a.insertAdjacentElement("beforeend", img);
+            li.insertAdjacentElement("beforeend", a);
             carousel.insertAdjacentElement("beforeend", li);
         }
         startCarousel();
@@ -135,7 +139,7 @@ Promise.all([
                 genreMovies.forEach((movie) => {
                     el.innerHTML += `
                     <div class="film-item">
-                        <a href="./movieDetail.html?id=${el.id}" target="_blank" rel="noopener noreferrer">
+                        <a href="./movieDetail.html?id=${movie.id}" target="_blank" rel="noopener noreferrer">
                         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                             <h4>${movie.title}</h4>
                             <p>${movie.genre_ids.map(id => findGenreName(data2, id)).join(', ')}</p>
