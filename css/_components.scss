@@ -214,29 +214,6 @@ button {
 }
 
 // Button Design: END --------------------------------------------
-
-
-/*********** ページネーション ***********/
-.pagination {
-    width: 150px;
-    margin: 5% auto 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.pagination-circle {
-    width: 20px;
-    height: 20px;
-    border: 1px solid $main-color;
-    border-radius: 50%;
-    background-color: $light-color;
-}
-
-/* jsでtargetクラスがついたら背景色を変える */
-.pagination-circle.target {
-    background-color: rgba($color: $white-color, $alpha: 0.8);
-}
-
 // Carousel: END //////////////////////////////////////////
 
 

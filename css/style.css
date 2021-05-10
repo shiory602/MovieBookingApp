@@ -1047,30 +1047,6 @@ button {
           transform: translate(-70%, -50%) rotate(135deg);
 }
 
-/*********** ページネーション ***********/
-.pagination {
-  width: 150px;
-  margin: 5% auto 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.pagination-circle {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #151515;
-  border-radius: 50%;
-  background-color: #5f758e;
-}
-
-/* jsでtargetクラスがついたら背景色を変える */
-.pagination-circle.target {
-  background-color: rgba(243, 252, 240, 0.8);
-}
-
 /*--------------------------
 | Image poster
 --------------------------*/

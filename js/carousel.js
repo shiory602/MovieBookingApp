@@ -25,13 +25,13 @@ export function startCarousel() {
     ////////////////////////////【スライドの動き方+ページネーションに関する関数定義】////////////////////////////
     ////////// スライドの切り替わりを「changeslide」として定義 
     function changeSlide() {
-        // carouselArea.scrollTo({
-        //     left: slideCurrent * -width,
-        //     behavior: "smooth"
-        // })
-        $('.carousel-area').stop().animate({ // stopメソッドを入れることでアニメーション1回毎に止める
-            left: slideCurrent * -width // 代入されたスライド数 × リスト1枚分の幅を左に動かす
-        });
+        carouselArea.scroll({
+            left: slideCurrent * -width,
+            behavior: "smooth"
+        })
+        // $('.carousel-area').stop().animate({ // stopメソッドを入れることでアニメーション1回毎に止める
+        //     left: slideCurrent * -width // 代入されたスライド数 × リスト1枚分の幅を左に動かす
+        // });
     }
 
 
