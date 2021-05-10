@@ -74,8 +74,6 @@ export function getNowPlayingMovieData() {
         // id ≒ unique(重複がない)
         // movieDetail.html?id=460465
         const json = res.json().then((json) => {
-            console.log(json);
-
             return json;
         })
         return json;
@@ -93,8 +91,6 @@ export function getUpcomingMovieData() {
         // id ≒ unique(重複がない)
         // movieDetail.html?id=460465
         const json = res.json().then((json) => {
-            console.log(json);
-
             return json;
         })
         return json;

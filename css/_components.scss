@@ -90,41 +90,6 @@ nav {
 // Search Bar: END /////////////////////////////////////
 
 // Carousel: START /////////////////////////////////////////
-
-.swiper-container {
-    width: 100%;
-    height: 350px;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: $main-color;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-//////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////
 .carousel {
     overflow: hidden;
     width: 600px;
@@ -135,13 +100,12 @@ nav {
 }
 
 .carousel-area {
-    // width: 3150px;
     height: 100%;
     display: flex;
     position: absolute;
 }
 
-.carousel-list {
+.carousel-item {
     width: 600px;
     height: calc(600px * 0.5625);
     margin-right: 30px;
@@ -158,11 +122,7 @@ nav {
         height: calc(300px * 0.5625);
     }
 
-    // .carousel-area {
-    //     width: 1500px;
-    // }
-
-    .carousel-list {
+    .carousel-item {
         width: 300px;
         height: calc(300px * 0.5625);
         margin-right: 0;
@@ -254,6 +214,29 @@ button {
 }
 
 // Button Design: END --------------------------------------------
+
+
+/*********** ページネーション ***********/
+.pagination {
+    width: 150px;
+    margin: 5% auto 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pagination-circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $main-color;
+    border-radius: 50%;
+    background-color: $light-color;
+}
+
+/* jsでtargetクラスがついたら背景色を変える */
+.pagination-circle.target {
+    background-color: rgba($color: $white-color, $alpha: 0.8);
+}
+
 // Carousel: END //////////////////////////////////////////
 
 

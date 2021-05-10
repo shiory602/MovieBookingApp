@@ -12,16 +12,15 @@
 - [x] placeholderの色を選択時に白にする
 - [ ] 検索結果のモーダルウィンドウ表示
 - [ ] カルーセルを設置してfetchデータを表示
-- [ ] ジャンルボタン下部にジャンルごとのセクションを表示
+- [x] ジャンルボタン下部にジャンルごとのセクションを表示
 
 ### Create the details movie page.
-- [ ] Background Image
-- [ ] Title of the Movie
-- [ ] Category
-- [ ] Description of the movie
-- [ ] Technical information (Director name, Cast, Genre , Runtime etc.)
-- [ ] Details movie page need to have the information about the movie, possibility to watch the trailer and the button to buy a ticket.
-- [ ] レートの星がアニメーションで表示されるようにする
+- [x] Background Image
+- [x] Title of the Movie
+- [x] Category
+- [x] Description of the movie
+- [x] Technical information (Director name, Cast, Genre , Runtime etc.)
+- [x] Details movie page need to have the information about the movie, possibility to watch the trailer and the button to buy a ticket.
 
 ### Selected Seats page
 - [ ] 特定のデータを表示する

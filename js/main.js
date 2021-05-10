@@ -17,8 +17,6 @@ const upcoming = document.querySelector('.upcomingJS');
 const genreButtons = document.querySelector('.genres');
 const genre = document.querySelector('.genreJS');
 
-startCarousel();
-
 
 // Search API: START -----------------------------------------------------------------
 
@@ -28,15 +26,19 @@ startCarousel();
 
 // Popular API (Carousel) : START -----------------------------------------------------------------
 getPopularMovieData()
-    .then(data => {
-        let li = document.createElement('li');
-        li.classList.add('carousel-list');
-        data.results.forEach(i => {
-            li.innerHTML += `
-                <img class="carousel-img" src="https://image.tmdb.org/t/p/w500${i.backdrop_path}" alt="${i.title}" width="1000px">
-            `;
-        })
-        carousel.appendChild(li);
+    .then(imgEl => {
+        for (let i = 0; i < 3; i++) {
+            const li = document.createElement('li');
+            li.setAttribute("class", "carousel-item");
+
+            const img = document.createElement("img");
+            img.setAttribute("class", "carousel-img");
+            img.src = `https://image.tmdb.org/t/p/w500${imgEl.results[i].backdrop_path}`;
+            img.alt = imgEl.results[i].title;
+            li.insertAdjacentElement("beforeend", img);
+            carousel.insertAdjacentElement("beforeend", li);
+        }
+        startCarousel();
 
     })
     .catch(error => console.error(error));
@@ -135,7 +137,7 @@ Promise.all([
                 const el = document.createElement('div');
                 el.classList.add("films");
                 genreMovies.forEach((movie) => {
-                el.innerHTML += `
+                    el.innerHTML += `
                     <div class="film-item">
                         <a href="./movieDetail.html?id=${el.id}" target="_blank" rel="noopener noreferrer">
                         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
@@ -144,8 +146,8 @@ Promise.all([
                         </a>
                     </div>
                 `;
-            })
-            return el;
+                })
+                return el;
             }
         })
     })

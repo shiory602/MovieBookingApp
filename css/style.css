@@ -915,35 +915,6 @@ nav .search-container button:active {
   top: 2px;
 }
 
-.swiper-container {
-  width: 100%;
-  height: 350px;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #151515;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .carousel {
   overflow: hidden;
   width: 600px;
@@ -961,7 +932,7 @@ nav .search-container button:active {
   position: absolute;
 }
 
-.carousel-list {
+.carousel-item {
   width: 600px;
   height: calc(600px * 0.5625);
   margin-right: 30px;
@@ -977,7 +948,7 @@ nav .search-container button:active {
     width: 300px;
     height: calc(300px * 0.5625);
   }
-  .carousel-list {
+  .carousel-item {
     width: 300px;
     height: calc(300px * 0.5625);
     margin-right: 0;
@@ -1074,6 +1045,30 @@ button {
   left: 50%;
   -webkit-transform: translate(-70%, -50%) rotate(135deg);
           transform: translate(-70%, -50%) rotate(135deg);
+}
+
+/*********** ページネーション ***********/
+.pagination {
+  width: 150px;
+  margin: 5% auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.pagination-circle {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #151515;
+  border-radius: 50%;
+  background-color: #5f758e;
+}
+
+/* jsでtargetクラスがついたら背景色を変える */
+.pagination-circle.target {
+  background-color: rgba(243, 252, 240, 0.8);
 }
 
 /*--------------------------
